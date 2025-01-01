@@ -1,0 +1,1158 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- TEMPLATE BEGIN: meta -->
+    <meta property="og:site_name" content="Beat Labs" />
+    <meta property="og:url" content="https://www.beatlabs.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Beat Labs" />
+    <meta
+      property="og:description"
+      content="An Open Sandbox for Rhythm Games in Virtual and Mixed Reality (VR/MR)."
+    />
+    <meta
+      property="og:image"
+      content="https://www.beatlabs.dev/static/beat-labs/img/meta-image.jpg"
+    />
+    <meta
+      property="og:video"
+      content="https://odysee.com/@BeatLabs:f/beat-labs-retro-drive:b"
+    />
+
+    <meta property="og:locale" content="en_US" />
+    <!-- <meta property="og:locale:alternate" content="en_US" /> -->
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <!-- TEMPLATE END: meta -->
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Beat Labs</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/beat-labs/site.css?v=4" />
+
+    <link rel="stylesheet" href="/static/beat-labs/pitch/pitch.css?v=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,700i"
+      rel="stylesheet"
+    />
+
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <script src="/static/beat-labs/site.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BFS97CHYWG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BFS97CHYWG");
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="default-header header">
+            <div class="logo">
+              <a href="/en/">Beat Labs</a>
+              <br />
+              <i>Find Your Rhythm</i>
+            </div>
+            <div class="header-holder">
+              <div class="hamburger display-none">
+                <a href="#">
+                  <div class="hamburger-inner"></div>
+                </a>
+              </div>
+              <div class="menu-holder">
+                <nav>
+                  <ul id="menu" class="menu">
+                    <li>
+                      <a href="/en/">Home</a>
+                    </li>
+                    <li>
+                      <a href="/en/pitch/">Pitch</a>
+                    </li>
+                    <li>
+                      <select
+                        id="languageSelect"
+                        onchange="redirectToSelectedLanguagePage()"
+                      >
+                        <option value="/en/pitch/">English</option>
+                        <option value="/pl/pitch/">Polish</option>
+                        <option value="/de/pitch/">German</option>
+                        <option value="/zh/pitch/">Chinese</option>
+                        <option value="/ko/pitch/">Korean</option>
+                        <option value="/fr/pitch/">French</option>
+                        <option value="/ja/pitch/">Japanese</option>
+                      </select>
+                      <script>
+                        initSelectedLanguageSelectValue();
+                      </script>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="body-container" class="container">
+        <div class="project-single">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <h1>
+                Beat Labs -
+                <span style="font-size: smaller"
+                  >The VR/MR World of Rhythm & Music</span
+                >
+              </h1>
+
+              <hr />
+
+              <a name="agenda"></a>
+              <h2 class="section-title">
+                Agenda
+                <a
+                  href="/static/beat-labs/pitch/Beat-Labs-Pitch-Deck-EN.pdf"
+                  style="float: right; font-size: 0.7em"
+                >
+                  PDF
+                </a>
+              </h2>
+
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <ol>
+                    <li>
+                      <a href="#overview">Overview</a>
+                    </li>
+                    <li>
+                      <a href="#gameplay">Gameplay</a>
+                    </li>
+                    <li>
+                      <a href="#market">Market</a>
+                    </li>
+                    <li>
+                      <a href="#audience">Audience</a>
+                    </li>
+                    <li>
+                      <a href="#business">Business</a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <ol start="6">
+                    <li>
+                      <a href="#statistics">Statistics</a>
+                    </li>
+                    <li>
+                      <a href="#marketing">Marketing</a>
+                    </li>
+                    <li>
+                      <a href="#team">Team</a>
+                    </li>
+                    <li>
+                      <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                      <a href="#links">Links</a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <img src="/static/beat-labs/img/music-notes-1.png" alt="" />
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="overview"></a>
+              <h2 class="section-title">
+                Overview <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                <strong
+                  ><a href="https://www.beatlabs.dev/">Beat Labs</a></strong
+                >
+                is an open sandbox for rhythm games in
+                <strong>Virtual and Mixed Reality (VR/MR)</strong>. Inspired by
+                <a href="https://beatsaber.com/">Beat Saber</a> - the classic VR
+                title that so far has generated more than
+                <strong>$250 million</strong>!
+              </p>
+
+              <p>
+                We have an ambition for Beat Labs to become something more than
+                Beat Saber by providing
+                <strong>a platform for immersive experiences</strong>
+                rather than being a single game. A platform for music and
+                rhythm-based mini-games, powered by content created by us,
+                <strong>the community of players</strong> and
+                <strong>AI</strong> (Artificial Intelligence).
+              </p>
+
+              <p>
+                One of the biggest selling points of Beat Labs is the
+                <strong>sheer number and variety of songs</strong> the players
+                can choose from. There's tens of thousands of beatmaps (levels)
+                created by Beat Saber community that we tap into.
+              </p>
+
+              <p>
+                Beat Labs is <strong>highly customizable</strong> to cater to
+                various players preferences. This includes the ability to choose
+                the type of gameplay, an environment in which the game takes
+                place, custom models of weapons and destructible objects and
+                more.
+              </p>
+
+              <p>
+                The customizations described above are part of what makes Beat
+                Labs an <strong>extensible platform</strong>. The content that
+                the community creates may even introduce novel gameplay
+                mechanics that we haven't yet thought of. This approach is
+                similar to other, highly popular and profitable platforms, like
+                <strong><a href="https://www.fortnite.com/">Fortnite</a></strong
+                >,
+                <strong
+                  ><a href="https://www.minecraft.net/">Minecraft</a></strong
+                >
+                or <strong><a href="https://www.roblox.com/">Roblox</a></strong
+                >.
+              </p>
+
+              <hr />
+
+              <a name="gameplay"></a>
+              <h2 class="section-title">
+                Gameplay <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                The following are some examples of immersive experiences wich
+                players can already play through.
+              </p>
+
+              <div>
+                <a
+                  href="https://odysee.com/@BeatLabs:f/kpop-concert-in-beat-labs-immersive-experience-tomboy:0"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/KPop_Concert_in_Beat_Labs__Immersive_Experience__TOMBOY_by.webp"
+                  />
+                </a>
+                <p style="font-style: italic; font-weight: bold">
+                  K-Pop Concert - An Immersive Experience (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/kpop-concert-in-beat-labs-immersive-experience-tomboy:0"
+                  >
+                    Full Video
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div style="text-align: right">
+                <a
+                  href="https://odysee.com/@BeatLabs:f/the-matrix-in-beat-labs-an-immersive-experience:c"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/The_Matrix_in_Beat_Labs__An_Immersive_Experience.webp"
+                  />
+                </a>
+                <p
+                  style="
+                    font-style: italic;
+                    font-weight: bold;
+                    text-align: right;
+                  "
+                >
+                  The Matrix - An Immersive Experience (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/the-matrix-in-beat-labs-an-immersive-experience:c"
+                  >
+                    Full Video
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div>
+                <a
+                  href="https://odysee.com/@BeatLabs:f/christmas-in-beat-labs:8"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/Christmas_in_Beat_Labs.webp"
+                  />
+                </a>
+                <p style="font-style: italic; font-weight: bold">
+                  Christmas in Beat Labs (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/christmas-in-beat-labs:8"
+                  >
+                    Full Video
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div style="text-align: right">
+                <a
+                  href="https://odysee.com/@BeatLabs:f/miracle-by-ellie-goulding-on-quest-3-in-passthrough:8"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/Miracle_by_Ellie_Goulding_on_Quest_3_in_Passthrough.webp"
+                  />
+                </a>
+                <p
+                  style="
+                    font-style: italic;
+                    font-weight: bold;
+                    text-align: right;
+                  "
+                >
+                  Mixed Reality - Miracle by Ellie Goulding (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/miracle-by-ellie-goulding-on-quest-3-in-passthrough:8"
+                  >
+                    Full Video
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div>
+                <a
+                  href="https://odysee.com/@BeatLabs:f/the-motto-in-beat-labs-with-the-moon-rider-stylization:3"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/The_Motto_by_Tiësto_and_Ava_Max_on_Beat_Labs.webp"
+                  />
+                </a>
+                <p style="font-style: italic; font-weight: bold">
+                  Retro Environment - The Motto by Tiësto and Ava Max (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/the-motto-in-beat-labs-with-the-moon-rider-stylization:3"
+                  >
+                    Full Video
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <hr />
+
+              <a name="market"></a>
+              <h2 class="section-title">
+                Market <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>Meta (Facebook) Quest 1, 2, 3</strong></p>
+                  <ul>
+                    <li>
+                      Leading VR/MR headset for mass consumer market in
+                      <strong>North America and Europe</strong>.
+                    </li>
+                    <li>Over <strong>20 million units</strong> sold so far.</li>
+                    <li>Dedicated Meta Quest Store for games and apps.</li>
+                    <li>Recently allowed by China to their market.</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/Quest-3.png"
+                    alt="Meta Quest 3"
+                    title="Meta Quest 3"
+                  />
+                  <p style="text-align: center">
+                    <strong>Quest 3</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>PICO 4</strong></p>
+                  <ul>
+                    <li>
+                      Leading VR/MR headset in East-Asian markets, eg.
+                      <strong>China</strong>, South Korea and Japan.
+                    </li>
+                    <li>Also availale in <strong>Europe</strong>.</li>
+                    <li>Dedicated PICO Store for games and apps.</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/PICO-4.png"
+                    alt="PICO 4"
+                    title="PICO 4"
+                  />
+                  <p style="text-align: center">
+                    <strong>PICO 4</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>Apple Vision Pro</strong></p>
+                  <ul>
+                    <li>
+                      Set to become a
+                      <strong>game changer</strong> in the VR/MR market.
+                    </li>
+                    <li>
+                      <strong>Highly anticipated</strong> and will generate
+                      interest in VR/MR market in general.
+                    </li>
+                    <li>
+                      Dedicated <strong>App Store</strong> for games and apps
+                      designed for VR/MR.
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/Vision-Pro.png"
+                    alt="Apple Vision Pro`"
+                    title="Apple Vision Pro`"
+                  />
+                  <p style="text-align: center">
+                    <strong>Vision Pro</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>Other VR/MR Headsets</strong></p>
+                  <ul>
+                    <li>
+                      Big market of <strong>PC VR</strong> (wired) headsets with
+                      <strong>SteamVR</strong> - the largest store for games.
+                    </li>
+                    <li>
+                      <strong>Google & Samsung</strong> are expected to join the
+                      VR/MR market in 2024.
+                    </li>
+                    <li>
+                      <strong>Valve</strong> is reportedly working on their own
+                      standalone VR/MR headset.
+                    </li>
+                    <li>
+                      <strong>Pimax</strong> with a novel headset that combines
+                      features from the Nintendo Switch console and standalone
+                      VR/MR headsets like Quest or PICO.
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/VR-Headsets.png"
+                    alt="Other VR/MR headsets`"
+                    title="Other VR/MR headsets`"
+                  />
+                  <p style="text-align: center">
+                    <strong>VR/MR Headsets</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="audience"></a>
+              <h2 class="section-title">
+                Audience <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                Beat Labs, as a platform, aims to cater to the needs of a
+                <strong>diverse playerbase</strong>:
+              </p>
+
+              <ul>
+                <li>
+                  Young adults, <strong>regular gamers</strong>, usually looking
+                  for <strong>fast-paced</strong>, reflex-base, competitive
+                  gameplay.
+                </li>
+                <li>
+                  Adults, <strong>casual gamers</strong>, usually looking for
+                  more <strong>laid back</strong>, fun gameplay, In the VR/MR
+                  context commonly used as a way to get and
+                  <strong>stay fit</strong>.
+                </li>
+                <li>
+                  Seniors - growing playerbase of casual gamers looking for
+                  novel, fun and <strong>relaxing</strong> gameplay that can
+                  also keep them in <strong>good shape</strong>.
+                </li>
+              </ul>
+
+              <hr />
+
+              <a name="business"></a>
+              <h2 class="section-title">
+                Business <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>There are many potential approaches to monetize Beat Labs:</p>
+
+              <ul>
+                <li>
+                  Each VR/MR headset vendor has or will have their own
+                  <strong>dedicated stores</strong>. For example: Meta Quest
+                  Store, PICO Store, Apple App Store, Google Play. There is also
+                  an independent portal and store - <strong>SideQuest</strong> -
+                  which lets players easily install 3rd party games and apps.
+                </li>
+                <li>
+                  The simplest approach would be to offer a
+                  <strong>single time purchase</strong>
+                  in those stores. However, we can do better than that.
+                </li>
+                <li>
+                  As Beat Labs is a platform, with practiacally limitless
+                  content to be created for it, we can offer
+                  <strong>DLCs</strong> (Downloadable Content) either through
+                  <strong>subscriptions</strong> or
+                  <strong>micro-transactions</strong> using virtual or real
+                  currency.
+                </li>
+                <li>
+                  Examples of the <strong>purchasable content</strong> that
+                  players may be willing to pay for are:
+                  <ul>
+                    <li><strong>Songs</strong> (levels).</li>
+                    <li>
+                      <strong>Environments</strong> in which the game takes
+                      place. This includes generic visuals as well as
+                      themed-ones, eg. Halloween, different holidays, specific
+                      to the music band, etc.
+                    </li>
+                    <li>
+                      <strong>Skins</strong> - 3D models for weapons,
+                      destructible objects, avatars and more.
+                    </li>
+                    <li>
+                      <strong>Gameplay mechanics</strong> - these would allow
+                      players to choose how the game is played. Slashing,
+                      punching, hitting, shooting, shielding, deflecting and
+                      more.
+                    </li>
+                    <li>
+                      <strong>Mods</strong> - custom, in-game modifications that
+                      can introduce major features, like displaying lyrics of
+                      the song being played, a screen for the music video,
+                      visual effects and more.
+                    </li>
+                    <li>
+                      Sounds and other <strong>customizations</strong> - to
+                      accommodate the unique preferences of each player.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Another idea is that we could utilize the code, the assets and
+                  basically anything that was created for the purpose of Beat
+                  Labs to <strong>develop entirely distinct games</strong> that
+                  could be marketed and sold separately, with whatever business
+                  model we would deem fit for them.
+                </li>
+              </ul>
+
+              <hr />
+
+              <a name="statistics"></a>
+              <h2 class="section-title">
+                Statistics <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                Below are statistics from different analytics platforms.
+                <strong>Click an image to enlarge it</strong>.
+              </p>
+
+              <h4>‣&nbsp; Unity Gaming Services - Analytics</h4>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-left">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/weekly-and-monthly-active-users-wau-and-mau.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/weekly-and-monthly-active-users-wau-and-mau.png"
+                      alt="Weekly and Monthly Active Users - WAU & MAU"
+                      title="Weekly and Monthly Active Users - WAU & MAU"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-right">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-active-users-dau.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-active-users-dau.png"
+                      alt="Daily Active Users (DAU)"
+                      title="Daily Active Users (DAU)"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/monthly-new-users.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/monthly-new-users.png"
+                      alt="Monthly New Users"
+                      title="Monthly New Users"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-new-users.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-new-users.png"
+                      alt="Daily New Users"
+                      title="Daily New Users"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <h4>‣&nbsp; PICO Lab - User Engagement</h4>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-left">
+                  <h5>Outside China</h5>
+
+                  <h5 class="pico-chart-label">Active Users Trend</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-outside-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-outside-china.png"
+                      alt="Active Users Trend - Outside China"
+                      title="Active Users Trend - Outside China"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">Time Spent Per User</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-outside-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-outside-china.png"
+                      alt="Time Spent Per User - Outside China"
+                      title="Time Spent Per User - Outside China"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">User Layering Trend</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-outside-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-outside-china.png"
+                      alt="Users Layering Trend - Outside China"
+                      title="Users Layering Trend - Outside China"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-right">
+                  <h5>China</h5>
+
+                  <h5 class="pico-chart-label">Active Users Trend</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-china.png"
+                      alt="Active Users Trend - China"
+                      title="Active Users Trend - China"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">Time Spent Per User</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-china.png"
+                      alt="Time Spent Per User - China"
+                      title="Time Spent Per User - China"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">User Layering Trend</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-china.png"
+                      alt="User Layering Trend - China"
+                      title="User Layering Trend - China"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <h4>‣&nbsp; SideQuest - App Metrics</h4>
+
+              <div class="row">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 stats-column-left stats-column-right"
+                >
+                  <h4>Quest</h4>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-quest.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-quest.png"
+                      alt="App Metrics - Quest"
+                      title="App Metrics - Quest"
+                    />
+                  </a>
+
+                  <h4>PICO</h4>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-pico.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-pico.png"
+                      alt="App Metrics - PICO"
+                      title="App Metrics - PICO"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="marketing"></a>
+              <h2 class="section-title">
+                Marketing <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                We implement various marketing strategies to expand our
+                playerbase. At the heart of these strategies is consistently
+                <strong>prioritizing the community</strong>:
+              </p>
+
+              <ul>
+                <li>
+                  We're utilizing traditional channels for
+                  <strong>advertisements</strong>, such as Facebook and
+                  promotional opportunities on SideQuest (a hub for third-party
+                  games and apps compatible with Meta Quest and PICO).
+                </li>
+                <li>
+                  We're engaging with <strong>existing communities</strong> of
+                  gamers and enthusiasts in the VR/MR space through Facebook
+                  Groups, Discord servers, Reddits, and similar platforms.
+                </li>
+                <li>
+                  W're collaborating with game reviewers and
+                  <strong>influencers</strong> in the VR/MR domain on outlets
+                  like YouTube, Instagram or TikTok.
+                </li>
+                <li>
+                  With the launch of Apple Vision Pro, we anticipate that being
+                  among the first to offer a game for that system will garner
+                  significant <strong>visibility</strong> in the Apple App
+                  Store.
+                </li>
+              </ul>
+
+              <hr />
+
+              <a name="team"></a>
+              <h2 class="section-title">
+                Team <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                <strong>
+                  <a href="https://www.linkedin.com/in/marekstoj/">
+                    ‣&nbsp; Marek Stój
+                  </a>
+                </strong>
+              </p>
+              <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <p>
+                    An <strong>experienced software developer</strong>. During
+                    his professional career spanning more than 15 years, he
+                    worked with technologies like <strong>.NET</strong>,
+                    <strong>C#</strong>,Android, Java, Big Data, Scala,
+                    <strong>Unity 3D</strong> and many others. For a few years
+                    now making his dream come true by working in the
+                    <strong>game development</strong> industry.
+                  </p>
+
+                  <p>
+                    <a href="https://www.linkedin.com/in/marekstoj/">
+                      <i class="fa-brands fa-linkedin"></i>
+                      www.linkedin.com/in/marekstoj
+                    </a>
+                  </p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <a href="https://www.linkedin.com/in/marekstoj/">
+                    <img
+                      src="/static/beat-labs/pitch/marek-stoj.png"
+                      alt="Marek Stój"
+                      title="Marek Stój"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <p>
+                <strong>
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    ‣&nbsp; The Community
+                  </a>
+                </strong>
+              </p>
+              <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <p>
+                    The community gathered around Beat Labs is what ultimately
+                    makes the platform awesome. Players and content creators,
+                    like custom level designers, 3D modellers and modders are
+                    first-class citizens here. Their voice is heard and greatly
+                    contributes to the decision making behind the direction and
+                    the <strong>shape of Beat Labs</strong>.
+                  </p>
+
+                  <p>
+                    <a href="https://dsc.gg/beatlabs?ref=pitch">
+                      <i class="fa-brands fa-discord"></i>
+                      dsc.gg/beatlabs
+                    </a>
+                  </p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    <img
+                      src="/static/beat-labs/pitch/beat-labs-discord.png"
+                      alt="Beat Labs Discord"
+                      title="Beat Labs Discord"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <p>
+                <strong>
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    ‣&nbsp; Wanted
+                  </a>
+                </strong>
+              </p>
+              <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <p>
+                    We're always on the lookout for passionate specialists
+                    (juniors as well) who might want to join us in our efforts.
+                    Here's a (non-exhaustive) list of roles we'd like to see on
+                    board:
+                  </p>
+
+                  <ul>
+                    <li>
+                      <strong>Graphics Programmer</strong> - Unity 3D, shaders,
+                      effects, optimization, etc.
+                    </li>
+                    <li>
+                      <strong>3D Artist</strong> - models, animations, low-poly.
+                    </li>
+                    <li>
+                      <strong>Gameplay Developer</strong> - Unity 3D, gameplay
+                      and logic.
+                    </li>
+                    <li>
+                      <strong>Backend Developer</strong> - C# and Microsoft
+                      Azure cloud.
+                    </li>
+                    <li><strong>UI/UX Enginner</strong> - web and Unity 3D.</li>
+                    <li>
+                      <strong>Musician(s)</strong> any instrument, any genre.
+                    </li>
+                    <li>
+                      <strong>Sound Designer</strong> DAWs, synthesizers, etc.
+                    </li>
+                    <li>
+                      <strong>Community Manager</strong> - Discord, social
+                      media.
+                    </li>
+                    <li>
+                      <strong>Marketer</strong> - marketing campaigns, social
+                      media, SEO.
+                    </li>
+                    <li>
+                      <strong>AI Specialist</strong> - LLMs, ChatGPT, data
+                      analytics.
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    <img
+                      src="/static/beat-labs/pitch/you-must-gather-your-party-before-venturing-forth.jpg"
+                      alt="You must gather your party before venturing forth"
+                      title="You must gather your party before venturing forth"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="contact"></a>
+              <h2 class="section-title">
+                Contact <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                Feel free to contact us via any of the social media platforms
+                listed in the <a href="#links">Links</a> section or via e-mail:
+                <a href="mailto:beat.labs.game@gmail.com">
+                  beat.labs.game@gmail.com</a
+                >.
+              </p>
+
+              <hr />
+
+              <a name="links"></a>
+              <h2 class="section-title">
+                Links <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                <strong>Website:</strong>
+                <a href="https://www.beatlabs.dev/">www.beatlabs.dev</a>
+              </p>
+              <p>
+                <strong>SideQuest (version for Quest):</strong>
+                <a href="https://sidequestvr.com/app/3832/beat-labs">
+                  sidequestvr.com/app/3832/beat-labs
+                </a>
+              </p>
+              <p>
+                <strong>SideQuest (version for Pico):</strong>
+                <a href="https://sidequestvr.com/app/12483/beat-labs-for-pico">
+                  sidequestvr.com/app/12483/beat-labs-for-pico
+                </a>
+              </p>
+              <p>
+                <strong>Discord:</strong>
+                <a href="https://dsc.gg/beatlabs?ref=pitch">
+                  dsc.gg/beatlabs
+                </a>
+              </p>
+              <p>
+                <strong>Facebook:</strong>
+                <a href="https://www.facebook.com/BeatLabsGame">
+                  www.facebook.com/BeatLabsGame
+                </a>
+              </p>
+              <p>
+                <strong>Odysee (videos):</strong>
+                <a href="https://odysee.com/@BeatLabs:f">
+                  odysee.com/@BeatLabs:f
+                </a>
+              </p>
+              <p>
+                <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/beat.labs.game">
+                  www.instagram.com/beat.labs.game
+                </a>
+              </p>
+              <p>
+                <strong>TikTok:</strong>
+                <a href="https://www.tiktok.com/@beat.labs.game">
+                  www.tiktok.com/@beat.labs.game
+                </a>
+              </p>
+              <p>
+                <strong>itch.io:</strong>
+                <a href="https://marek-stoj.itch.io/beat-labs">
+                  marek-stoj.itch.io/beat-labs
+                </a>
+                <img
+                  src="/static/beat-labs/img/music-notes-2.png"
+                  alt=""
+                  style="float: right"
+                />
+              </p>
+              <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/company/beat-labs-vr/">
+                  www.linkedin.com/company/beat-labs-vr/
+                </a>
+              </p>
+              <p>
+                <strong>Patreon:</strong>
+                <a href="https://www.patreon.com/BeatLabs">
+                  www.patreon.com/BeatLabs
+                </a>
+              </p>
+
+              <hr />
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-widgets">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <p>
+                &copy; 2021
+                <script>
+                  new Date().getFullYear() > 2017 &&
+                    document.write(" - " + new Date().getFullYear());
+                </script>
+                |
+                <a href="/en/privacy-policy/">privacy policy</a>
+              </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-right">
+              <ul>
+                <li>
+                  <a href="https://www.patreon.com/BeatLabs">
+                    <i class="fa-brands fa-patreon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    <i class="fa-brands fa-discord"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/BeatLabsGame">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://odysee.com/@BeatLabs:f">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/beat.labs.game">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@beat.labs.game">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://marek-stoj.itch.io/beat-labs">
+                    <i class="fa-brands fa-itch-io"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/beat-labs-vr/">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,692 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- TEMPLATE BEGIN: meta -->
+    <meta property="og:site_name" content="Beat Labs" />
+    <meta property="og:url" content="https://www.beatlabs.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Beat Labs" />
+    <meta
+      property="og:description"
+      content="バーチャルおよびミックスドリアリティ（VR/MR）でリズムゲームのためのオープンサンドボックス。"
+    />
+    <meta
+      property="og:image"
+      content="https://www.beatlabs.dev/static/beat-labs/img/meta-image.jpg"
+    />
+    <meta
+      property="og:video"
+      content="https://odysee.com/@BeatLabs:f/beat-labs-retro-drive:b"
+    />
+
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <!-- <meta property="og:locale:alternate" content="ja_JP" /> -->
+    <!-- TEMPLATE END: meta -->
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Beat Labs</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/beat-labs/site.css?v=4" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,700i"
+      rel="stylesheet"
+    />
+
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <script src="/static/beat-labs/site.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BFS97CHYWG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BFS97CHYWG");
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="default-header header">
+            <div class="logo">
+              <a href="/ja/">Beat Labs</a>
+              <br />
+              <i>リズムを見つけよう</i>
+            </div>
+            <div class="header-holder">
+              <div class="hamburger display-none">
+                <a href="#">
+                  <div class="hamburger-inner"></div>
+                </a>
+              </div>
+              <div class="menu-holder">
+                <nav>
+                  <ul id="menu" class="menu">
+                    <li>
+                      <a href="/ja/">ホーム</a>
+                    </li>
+                    <li>
+                      <a href="/ja/pitch">ピッチ</a>
+                    </li>
+                    <li>
+                      <select
+                        id="languageSelect"
+                        onchange="redirectToSelectedLanguagePage()"
+                      >
+                        <option value="/en/">英語</option>
+                        <option value="/pl/">ポーランド語</option>
+                        <option value="/de/">ドイツ語</option>
+                        <option value="/zh/">中国語</option>
+                        <option value="/ko/">韓国語</option>
+                        <option value="/fr/">フランス語</option>
+                        <option value="/ja/">日本語</option>
+                      </select>
+                      <script>
+                        initSelectedLanguageSelectValue();
+                      </script>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="project-single">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <a name="info"></a>
+              <h2>概要</h2>
+
+              <div class="row para-and-gif-row">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <p>
+                    Beat
+                    Labsは、バーチャルリアリティ（VR）と複合現実（MR）における
+                    <strong
+                      >リズムゲーム用のオープンかつクロスプラットフォームのサンドボックス</strong
+                    >
+                    です。これは、コミュニティによって作成された10万以上の楽曲ビートマップのデータベースによって支えられています。
+                  </p>
+
+                  <p>
+                    このゲームは
+                    <a href="https://sidequestvr.com/app/3832/beat-labs"
+                      >Meta Quest</a
+                    >、
+                    <a
+                      href="https://sidequestvr.com/app/12483/beat-labs-for-pico"
+                      >PICO 4</a
+                    >、
+                    <a
+                      href="https://odysee.com/@BeatLabs:f/beat-labs-on-apple-vision-pro-work-in-progress:b"
+                      >Apple Vision Pro</a
+                    >
+                    で利用可能であり、<a href="/webxr">没入型ウェブ (WebXR)</a>
+                    にも対応しています。
+                  </p>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="gameplay-video-inline">
+                    <a
+                      href="https://odysee.com/@BeatLabs:f/kpop-concert-in-beat-labs-immersive-experience-tomboy:0"
+                    >
+                      <img
+                        src="/static/beat-labs/pitch/KPop_Concert_in_Beat_Labs__Immersive_Experience__TOMBOY_by.webp"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <hr />
+
+              <p>
+                <strong>免責事項：</strong>
+                <span style="font-style: italic">
+                  Beat LabsはBeat Saberとは関係がありません。Meta Platforms,
+                  Inc.によって提供、承認、または関連付けられているものではありません。
+                </span>
+              </p>
+
+              <hr />
+
+              <p>
+                <strong
+                  >途切れないゲームプレイとゲームのすべての機能へのアクセスを解除するアクセスコードを取得するには</strong
+                >、プロジェクトの開発を
+                <a href="/patreon-buy">Patreon</a>
+                または
+                <a href="/paypal">PayPal</a>
+                を通じてサポートすることを検討してください。開発に非常に役立ちます。
+              </p>
+
+              <table align="center">
+                <tbody>
+                  <tr>
+                    <td style="padding: 0 20 0 20">
+                      <p style="text-align: center">
+                        <a href="https://dsc.gg/beatlabs?ref=homepage">
+                          <img
+                            src="/static/beat-labs/img/discord-button.png"
+                            alt="Beat Labs Community Discord"
+                          />
+                        </a>
+                      </p>
+                    </td>
+                    <td style="padding: 0 20 0 20">
+                      <form
+                        action="https://www.paypal.com/donate"
+                        method="post"
+                        target="_top"
+                      >
+                        <input
+                          type="hidden"
+                          name="hosted_button_id"
+                          value="LRJNPQXGZVUES"
+                        />
+                        <input
+                          type="image"
+                          src="https://www.paypalobjects.com/ja_JP/i/btn/btn_donate_LG.gif"
+                          border="0"
+                          name="submit"
+                          title="PayPal - The safer, easier way to pay online!"
+                          alt="Donate with PayPal button"
+                          style="height: 33px; margin-top: 10px"
+                        />
+                        <img
+                          alt=""
+                          border="0"
+                          src="https://www.paypal.com/en_PL/i/scr/pixel.gif"
+                          width="1"
+                          height="1"
+                        />
+                      </form>
+                    </td>
+                    <td style="padding: 0 20 0 20">
+                      <p style="text-align: center">
+                        <a href="/patreon-buy">
+                          <img
+                            src="/static/beat-labs/img/patreon-button.png"
+                            alt="Patreon Page"
+                            style="height: 34px"
+                          />
+                        </a>
+                      </p>
+                    </td>
+                    <td style="padding: 0 20 0 20">
+                      <p style="text-align: center">
+                        <a href="https://www.facebook.com/BeatLabsGame">
+                          <img
+                            src="/static/beat-labs/img/facebook-button.png"
+                            alt="Beat Labs Community Facebook Page"
+                          />
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>
+                私たちはオープンに活動していますので、
+                <a href="https://dsc.gg/beatlabs?ref=homepage">
+                  Discordで議論に参加</a
+                >
+                したり、
+                <a href="https://www.facebook.com/BeatLabsGame">Facebook </a>
+                や
+                <a href="#links">他のプラットフォーム</a>
+                （以下のリンクを参照）で連絡を取ることができます。また、メールでのお問い合わせも可能です：
+                <a href="mailto:beat.labs.game@gmail.com"
+                  >beat.labs.game@gmail.com</a
+                >。
+              </p>
+
+              <a name="details"></a>
+              <h2>詳細</h2>
+
+              <div class="row para-and-gif-row">
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="gameplay-video-inline">
+                    <a
+                      href="https://odysee.com/@BeatLabs:f/miracle-by-ellie-goulding-on-quest-3-in-passthrough:8"
+                    >
+                      <img
+                        src="/static/beat-labs/pitch/Miracle_by_Ellie_Goulding_on_Quest_3_in_Passthrough.webp"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <p>
+                    私は、Beat Labsが
+                    <strong>没入型体験のためのプラットフォーム</strong>
+                    になることを目指しています。それは単なる1つのゲームではなく、音楽やリズムに基づいたミニゲームのためのプラットフォームであり、私、
+                    <strong>プレイヤーコミュニティ</strong>
+                    、そして<strong>AI（人工知能）</strong>によって作られたコンテンツによって支えられています。
+                  </p>
+                </div>
+              </div>
+
+              <p>
+                Beat Labsの最大の魅力の1つは、プレイヤーが選べる
+                <strong>膨大な数と多様な楽曲</strong>
+                です。コミュニティによって作られた何万ものビートマップ（レベル）を活用しています。
+              </p>
+
+              <div class="row para-and-gif-row">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <p>
+                    Beat Labsは
+                    <strong>非常にカスタマイズ可能</strong>
+                    で、さまざまなプレイヤーの好みに応じたゲームプレイタイプ、ゲームが行われる環境、カスタムモデルの武器や破壊可能なオブジェクトなどを選択できます。
+                  </p>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="gameplay-video-inline">
+                    <a
+                      href="https://odysee.com/@BeatLabs:f/christmas-in-beat-labs:8"
+                    >
+                      <img
+                        src="/static/beat-labs/pitch/Christmas_in_Beat_Labs.webp"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row para-and-gif-row">
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="gameplay-video-inline">
+                    <a
+                      href="https://odysee.com/@BeatLabs:f/the-matrix-in-beat-labs-an-immersive-experience:c"
+                    >
+                      <img
+                        src="/static/beat-labs/pitch/The_Matrix_in_Beat_Labs__An_Immersive_Experience.webp"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <p>
+                    上記のカスタマイズは、Beat Labsを
+                    <strong>拡張可能なプラットフォーム</strong>
+                    にする要素の一部です。コミュニティが作成するコンテンツは、私たちがまだ考えついていない新しいゲームプレイの仕組みを導入することもあります。このアプローチは、
+                    <strong
+                      ><a href="https://www.fortnite.com/">Fortnite</a></strong
+                    >、
+                    <strong
+                      ><a href="https://www.minecraft.net/"
+                        >Minecraft</a
+                      ></strong
+                    >
+                    、
+                    <strong
+                      ><a href="https://www.roblox.com/">Roblox</a></strong
+                    >
+                    など、他の人気のあるプラットフォームと類似しています。
+                  </p>
+                </div>
+              </div>
+
+              <a name="support-the-project"></a>
+              <h2>プロジェクトを支援する</h2>
+
+              <p>
+                プロジェクトの開発を
+                <a href="/patreon-buy">Patreon</a>
+                または
+                <a href="/paypal">PayPal</a> を通じて支援することができます。
+                <strong>ゲームは無料</strong
+                >なので、これは完全に任意ですが、支援していただければいくつかの特典を受け取ることができます：
+              </p>
+
+              <img
+                src="/static/beat-labs/img/music-notes-1.png"
+                alt=""
+                style="float: right"
+              />
+
+              <ul>
+                <li>次期リリースへの早期アクセス。</li>
+                <li>あなたの機能/バグ修正リクエストの優先順位付け。</li>
+                <li>ゲーム開発プロセスへの洞察。</li>
+              </ul>
+
+              <ul>
+                <li>ゲームの進むべき方向性に対する影響力。</li>
+                <li>優先サポート。</li>
+                <li>限定マップ、カスタマイズ等へのアクセス。</li>
+              </ul>
+
+              <p>さあ、行こう！ 🙏</p>
+
+              <ul>
+                <li>
+                  <a href="/paypal">PayPalで購入</a>
+                </li>
+                <li>
+                  <a href="/patreon-buy">Patreonで購入</a>
+                </li>
+                <li>
+                  <a href="https://www.patreon.com/BeatLabs">
+                    Patreonに登録する</a
+                  >
+                </li>
+              </ul>
+
+              <a name="gameplay-videos"></a>
+              <h2>ゲームプレイ動画</h2>
+
+              <div class="row" style="margin-top: 20px">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <iframe
+                    width="374"
+                    height="210"
+                    src="https://www.youtube.com/embed/jKaAcoA_wqE"
+                    title="Beat Labs - The Way It's Meant To Be Played"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <iframe
+                    width="374"
+                    height="210"
+                    src="https://www.youtube.com/embed/R3yawg5Obbs"
+                    title="K-Pop Concert in Beat Labs"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+
+              <p></p>
+
+              <div class="row" style="margin-top: 20px">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <iframe
+                    width="374"
+                    height="210"
+                    src="https://www.youtube.com/embed/xPIEBUgZ7fQ"
+                    title="Minecraft in Beat Labs"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <iframe
+                    width="374"
+                    height="210"
+                    src="https://www.youtube.com/embed/Dsah_4TUqvM"
+                    title="Christmas in Beat Labs"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+
+              <p></p>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <iframe
+                    width="374"
+                    height="210"
+                    src="https://www.youtube.com/embed/1-zmmbyPacQ"
+                    title="Miracle by Ellie Goulding on Quest 3 in Passthrough"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <iframe
+                    width="374"
+                    height="210"
+                    src="https://www.youtube.com/embed/fOoP0DryyXY"
+                    title="The Matrix in Beat Labs - An Immersive Experience"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+
+              <a name="links"></a>
+              <h2>リンク</h2>
+
+              <p>
+                <strong>Meta Horizon Store:</strong>
+                <a href="https://www.meta.com/experiences/7758623540824877/">
+                  www.meta.com/experiences/7758623540824877/
+                </a>
+              </p>
+              <p>
+                <strong>SideQuest（Quest版）:</strong>
+                <a href="https://sidequestvr.com/app/3832/beat-labs">
+                  sidequestvr.com/app/3832/beat-labs
+                </a>
+              </p>
+              <p>
+                <strong>SideQuest（Pico版）:</strong>
+                <a href="https://sidequestvr.com/app/12483/beat-labs-for-pico">
+                  sidequestvr.com/app/12483/beat-labs-for-pico
+                </a>
+              </p>
+              <p>
+                <strong>Discord:</strong>
+                <a href="https://dsc.gg/beatlabs?ref=homepage">
+                  dsc.gg/beatlabs
+                </a>
+              </p>
+              <p>
+                <strong>Facebook:</strong>
+                <a href="https://www.facebook.com/BeatLabsGame">
+                  www.facebook.com/BeatLabsGame
+                </a>
+              </p>
+              <p>
+                <strong>Odysee (videos):</strong>
+                <a href="https://odysee.com/@BeatLabs:f">
+                  odysee.com/@BeatLabs:f
+                </a>
+              </p>
+              <p>
+                <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/beat.labs.game">
+                  www.instagram.com/beat.labs.game
+                </a>
+              </p>
+              <p>
+                <strong>TikTok:</strong>
+                <a href="https://www.tiktok.com/@beat.labs.game">
+                  www.tiktok.com/@beat.labs.game
+                </a>
+              </p>
+              <p>
+                <strong>itch.io:</strong>
+                <a href="https://marek-stoj.itch.io/beat-labs">
+                  marek-stoj.itch.io/beat-labs
+                </a>
+                <img
+                  src="/static/beat-labs/img/music-notes-2.png"
+                  alt=""
+                  style="float: right"
+                />
+              </p>
+              <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/company/beat-labs-vr/">
+                  www.linkedin.com/company/beat-labs-vr/
+                </a>
+              </p>
+              <p>
+                <strong>Patreon:</strong>
+                <a href="https://www.patreon.com/BeatLabs">
+                  www.patreon.com/BeatLabs
+                </a>
+              </p>
+              <p>
+                <strong>Eメール:</strong>
+                <a href="mailto:beat.labs.game@gmail.com">
+                  beat.labs.game@gmail.com
+                </a>
+              </p>
+
+              <a name="bmg"></a>
+              <h2>Body Mind Games</h2>
+
+              <div class="row para-and-gif-row">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <p>
+                    <strong>身体、心、現実を拡張しよう</strong>
+                  </p>
+                  <p>
+                    <a href="https://www.bodymindgames.com/"
+                      >ボディ・マインド・ゲームズ</a
+                    >
+                    は
+                    <a href="http://www.marekstoj.com/">マレク・ストイ</a>の
+                    個人ゲーム開発プロジェクトです。そこで他のプロジェクト、
+                    ゲーム、プロトタイプなどを見つけることができます。
+                  </p>
+                  <p>
+                    私のビジョンと目標は、VR/MRゲームを作成してプレイヤー
+                    を意味のある方法で引き付け、楽しさと同時に彼らの健康
+                    と幸福に貢献することです。私はプレイヤーが成長し、
+                    ポジティブに発展するのを助けるゲームを作りたいです。
+                  </p>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="gameplay-video-inline">
+                    <a href="https://www.bodymindgames.com/">
+                      <img
+                        src="/static/beat-labs/img/body-mind-games-logo-512x512.jpg"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-widgets">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <p>
+                &copy; 2021
+                <script>
+                  new Date().getFullYear() > 2021 &&
+                    document.write(" - " + new Date().getFullYear());
+                </script>
+                |
+                <a href="/ja/privacy-policy/">プライバシーポリシー</a>
+              </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-right">
+              <ul>
+                <li>
+                  <a href="https://www.patreon.com/BeatLabs">
+                    <i class="fa-brands fa-patreon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://dsc.gg/beatlabs?ref=homepage">
+                    <i class="fa-brands fa-discord"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/BeatLabsGame">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://odysee.com/@BeatLabs:f">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/beat.labs.game">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@beat.labs.game">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://marek-stoj.itch.io/beat-labs">
+                    <i class="fa-brands fa-itch-io"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/beat-labs-vr/">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

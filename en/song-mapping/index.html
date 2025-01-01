@@ -1,0 +1,354 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- TEMPLATE BEGIN: meta -->
+    <meta property="og:site_name" content="Beat Labs" />
+    <meta property="og:url" content="https://www.beatlabs.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Beat Labs" />
+    <meta
+      property="og:description"
+      content="An Open Sandbox for Rhythm Games in Virtual and Mixed Reality (VR/MR)."
+    />
+    <meta
+      property="og:image"
+      content="https://www.beatlabs.dev/static/beat-labs/img/meta-image.jpg"
+    />
+    <meta
+      property="og:video"
+      content="https://odysee.com/@BeatLabs:f/beat-labs-retro-drive:b"
+    />
+
+    <meta property="og:locale" content="en_US" />
+    <!-- <meta property="og:locale:alternate" content="en_US" /> -->
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <!-- TEMPLATE END: meta -->
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Beat Labs</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/beat-labs/site.css?v=4" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,700i"
+      rel="stylesheet"
+    />
+
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <script src="/static/beat-labs/site.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BFS97CHYWG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BFS97CHYWG");
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="default-header header">
+            <div class="logo">
+              <a href="/en/">Beat Labs</a>
+              <br />
+              <i>Find Your Rhythm</i>
+            </div>
+            <div class="header-holder">
+              <div class="hamburger display-none">
+                <a href="#">
+                  <div class="hamburger-inner"></div>
+                </a>
+              </div>
+              <div class="menu-holder">
+                <nav>
+                  <ul id="menu" class="menu">
+                    <li>
+                      <a href="/en/">Home</a>
+                    </li>
+                    <li>
+                      <a href="/en/song-mapping">Songs</a>
+                    </li>
+                    <li>
+                      <a href="/en/pitch">Pitch</a>
+                    </li>
+                    <li>
+                      <select
+                        id="languageSelect"
+                        onchange="redirectToSelectedLanguagePage()"
+                      >
+                        <option value="/en/song-mapping">English</option>
+                        <option value="/pl/song-mapping">Polish</option>
+                        <option value="/en/song-mapping">German</option>
+                        <option value="/en/song-mapping">Chinese</option>
+                        <option value="/en/song-mapping">Korean</option>
+                        <option value="/en/song-mapping">French</option>
+                        <option value="/en/song-mapping">Japanese</option>
+                      </select>
+                      <script>
+                        initSelectedLanguageSelectValue();
+                      </script>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="project-single">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <a name="song-mapping"></a>
+              <h2>Song Mapping</h2>
+
+              <p>
+                Can't find a song you're looking for? Fret not as there are ways
+                to get it into Beat Labs.
+              </p>
+
+              <ul>
+                <li>
+                  <a href="#commission-mapping">Commission Mapping</a>
+                </li>
+                <li>
+                  <a href="#ai-mapping">AI Mapping</a>
+                </li>
+              </ul>
+
+              <a name="commission-mapping"></a>
+
+              <h3>Commission Mapping</h3>
+
+              <p>
+                You can commission creation of maps for your favorite songs to
+                so called mappers. One such person is <b>Joetastic</b>, one of
+                the best mappers out there, who I have a pleasure of
+                collaborating with. Reach out to him directly and make sure to
+                mention that Beat Labs referred you:
+              </p>
+
+              <ul>
+                <li>
+                  <strong>
+                    <a href="https://linktr.ee/Joetastic">Joetastic</a>
+                  </strong>
+                </li>
+              </ul>
+
+              <p>
+                There are other mappers who can do it too. You can find them on
+                Discord servers dedicated to song mapping commissions:
+              </p>
+
+              <ul>
+                <li>
+                  <a href="https://discord.gg/h8VMkhn"
+                    >Beat Saber Commissions</a
+                  >
+                </li>
+                <li>
+                  <a href="https://discord.com/invite/e4f3WBBVnr">
+                    Beat Saber Commissions Center
+                  </a>
+                </li>
+              </ul>
+
+              <a name="ai-mapping"></a>
+
+              <h3>AI Mapping</h3>
+
+              <p>
+                If you can't or don't want to go a paid route, you can create
+                the maps yourself by utilizing this AI tool:
+              </p>
+
+              <ul>
+                <li>
+                  <a href="https://beatsage.com/">BeatSage</a>
+                </li>
+              </ul>
+
+              <p>
+                It can usually produce quite playable maps. Human-made maps
+                would most likely be better but from my experience, the
+                BeatSage-generated ones are good enough to have fun.
+              </p>
+
+              <p>
+                One issue to keep in mind is that using YouTube video link
+                directly in BeatSage hasn't been working for a while now. You
+                can upload a song file directly (an MP3 or OGG) if you have one;
+                if you don't I'd recommend another tool, y2mate, it lets you
+                grab audio from any YouTube video:
+              </p>
+
+              <ul>
+                <li>
+                  <a href="https://www.y2mate.com/">y2mate</a>
+                </li>
+              </ul>
+
+              <p>
+                One tip for using BeatSage is to configure it to use the V2 Flow
+                model, rather than the default one (V2) but you could play
+                around with both to see which one you prefer for a particular
+                song:
+              </p>
+
+              <div style="text-align: center; margin: 10px 0">
+                <img
+                  src="/static/beat-labs/img/beat-sage-models.webp"
+                  style="width: 480px"
+                />
+              </div>
+
+              <p>
+                Finally, once you download the map (a ZIP archive), you'd need
+                to go to BeatSaver:
+              </p>
+
+              <ul>
+                <li>
+                  <a href="https://beatsaver.com/">BeatSaver</a>
+                </li>
+              </ul>
+
+              <p>
+                Create an account there and you can upload maps. Then they will
+                show up in search results within Beat Labs. You can create your
+                own playlists too.
+              </p>
+
+              <p>
+                Just make sure that you truthfully select the appropriate option
+                when uploading a map, indicating that you used an AI tool;
+                otherwise you most likely get banned quickly:
+              </p>
+
+              <div style="text-align: center; margin: 10px 0">
+                <img
+                  src="/static/beat-labs/img/beat-sage-ai-option.webp"
+                  style="width: 480px"
+                />
+              </div>
+
+              <p>
+                Have fun mapping and playing your favorite songs in Beat Labs!
+              </p>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-widgets">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <p>
+                &copy; 2021
+                <script>
+                  new Date().getFullYear() > 2021 &&
+                    document.write(" - " + new Date().getFullYear());
+                </script>
+                |
+                <a href="/en/privacy-policy/">privacy policy</a>
+              </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-right">
+              <ul>
+                <li>
+                  <a href="https://www.patreon.com/BeatLabs">
+                    <i class="fa-brands fa-patreon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://dsc.gg/beatlabs?ref=homepage">
+                    <i class="fa-brands fa-discord"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/BeatLabsGame">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://odysee.com/@BeatLabs:f">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/beat.labs.game">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@beat.labs.game">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://marek-stoj.itch.io/beat-labs">
+                    <i class="fa-brands fa-itch-io"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/beat-labs-vr/">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

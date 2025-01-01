@@ -1,0 +1,1106 @@
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- TEMPLATE BEGIN: meta -->
+    <meta property="og:site_name" content="Beat Labs" />
+    <meta property="og:url" content="https://www.beatlabs.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="节拍实验室 Beat Labs" />
+    <meta
+      property="og:description"
+      content="一个用于虚拟和混合现实节奏游戏的开放式沙盒。(VR/MR)."
+    />
+    <meta
+      property="og:image"
+      content="https://www.beatlabs.dev/static/beat-labs/img/meta-image.jpg"
+    />
+    <meta
+      property="og:video"
+      content="https://odysee.com/@BeatLabs:f/beat-labs-retro-drive:b"
+    />
+
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <!-- <meta property="og:locale:alternate" content="zh_CN" /> -->
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <!-- TEMPLATE END: meta -->
+
+    <title>Beat Labs</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/beat-labs/site.css?v=4" />
+
+    <link rel="stylesheet" href="/static/beat-labs/pitch/pitch.css?v=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,700i"
+      rel="stylesheet"
+    />
+
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <script src="/static/beat-labs/site.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BFS97CHYWG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BFS97CHYWG");
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="default-header header">
+            <div class="logo">
+              <a href="/zh/">Beat Labs</a>
+              <br />
+              <i>找到你的节奏</i>
+            </div>
+            <div class="header-holder">
+              <div class="hamburger display-none">
+                <a href="#">
+                  <div class="hamburger-inner"></div>
+                </a>
+              </div>
+              <div class="menu-holder">
+                <nav>
+                  <ul id="menu" class="menu">
+                    <li>
+                      <a href="/zh/">首页</a>
+                    </li>
+                    <li>
+                      <a href="/zh/pitch">融资演讲</a>
+                    </li>
+                    <li>
+                      <select
+                        id="languageSelect"
+                        onchange="redirectToSelectedLanguagePage()"
+                      >
+                        <option value="/en/pitch/">英语</option>
+                        <option value="/pl/pitch/">波蘭文</option>
+                        <option value="/de/pitch/">德语</option>
+                        <option value="/zh/pitch/">中文</option>
+                        <option value="/ko/pitch/">韩语</option>
+                        <option value="/fr/pitch/">法文</option>
+                        <option value="/ja/pitch/">日文</option>
+                      </select>
+                      <script>
+                        initSelectedLanguageSelectValue();
+                      </script>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="body-container" class="container">
+        <div class="project-single">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <h1>
+                Beat Labs -
+                <span style="font-size: smaller">音律与音乐的VR/MR世界</span>
+              </h1>
+
+              <hr />
+
+              <a name="agenda"></a>
+              <h2 class="section-title">
+                议程
+                <a
+                  href="/static/beat-labs/pitch/Beat-Labs-Pitch-Deck-ZH.pdf"
+                  style="float: right; font-size: 0.7em"
+                >
+                  PDF
+                </a>
+              </h2>
+
+              <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <ol>
+                    <li>
+                      <a href="#overview">概览</a>
+                    </li>
+                    <li>
+                      <a href="#gameplay">游戏玩法</a>
+                    </li>
+                    <li>
+                      <a href="#market">市场</a>
+                    </li>
+                    <li>
+                      <a href="#audience">受众</a>
+                    </li>
+                    <li>
+                      <a href="#business">业务</a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <ol start="6">
+                    <li>
+                      <a href="#statistics">统计数据</a>
+                    </li>
+                    <li>
+                      <a href="#marketing">营销</a>
+                    </li>
+                    <li>
+                      <a href="#team">团队</a>
+                    </li>
+                    <li>
+                      <a href="#contact">联系方式</a>
+                    </li>
+                    <li>
+                      <a href="#links">链接</a>
+                    </li>
+                  </ol>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <img src="/static/beat-labs/img/music-notes-1.png" alt="" />
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="overview"></a>
+              <h2 class="section-title">
+                概览 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                <strong
+                  ><a href="https://www.beatlabs.dev/">Beat Labs</a></strong
+                >
+                是一个开放的节奏游戏沙盒，位于
+                <strong>虚拟与混合现实（VR/MR）</strong> 领域。受到
+                <a href="https://beatsaber.com/">Beat Saber</a>
+                的启发 - 这款经典的VR游戏迄今已经创造了超过
+                <strong>$250 million</strong> 的收入！
+              </p>
+
+              <p>
+                我们希望 Beat Labs 能够成为比 Beat Saber 更多的东西，提供
+                <strong>沉浸式体验的平台</strong>
+                ，而不仅仅是一个单一的游戏。这是一个音乐和基于节奏的小游戏平台，由我们、
+                <strong>玩家社区</strong> 和
+                <strong>人工智能（AI）</strong> 创造的内容驱动。
+              </p>
+
+              <p>
+                Beat Labs 最大的卖点之一是玩家可以选择的
+                <strong>大量丰富的歌曲</strong>。我们利用了由 Beat Saber
+                社区创建的数以万计的 beatmaps（关卡）。
+              </p>
+
+              <p>
+                Beat Labs 可以根据不同玩家的喜好进行
+                <strong>高度定制</strong
+                >。这包括选择游戏类型、游戏发生的环境、武器和可破坏物体的自定义模型等。
+              </p>
+
+              <p>
+                上述的定制是使 Beat Labs 成为一个
+                <strong>可扩展平台</strong>
+                的一部分。社区创建的内容甚至可能引入我们尚未考虑的新的游戏机制。这种方法类似于其他非常受欢迎和盈利丰厚的平台，如
+                <strong><a href="https://www.fortnite.com/">Fortnite</a></strong
+                >、
+                <strong
+                  ><a href="https://www.minecraft.net/">Minecraft</a></strong
+                >
+                或 <strong><a href="https://www.roblox.com/">Roblox</a></strong
+                >。
+              </p>
+
+              <hr />
+
+              <a name="gameplay"></a>
+              <h2 class="section-title">
+                游戏玩法 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>以下是玩家已经可以通过的一些沉浸式体验的例子。</p>
+
+              <div>
+                <a
+                  href="https://odysee.com/@BeatLabs:f/kpop-concert-in-beat-labs-immersive-experience-tomboy:0"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/KPop_Concert_in_Beat_Labs__Immersive_Experience__TOMBOY_by.webp"
+                  />
+                </a>
+                <p style="font-style: italic; font-weight: bold">
+                  韩国流行音乐音乐会 - 沉浸式体验 (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/kpop-concert-in-beat-labs-immersive-experience-tomboy:0"
+                  >
+                    完整视频
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div style="text-align: right">
+                <a
+                  href="https://odysee.com/@BeatLabs:f/the-matrix-in-beat-labs-an-immersive-experience:c"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/The_Matrix_in_Beat_Labs__An_Immersive_Experience.webp"
+                  />
+                </a>
+                <p
+                  style="
+                    font-style: italic;
+                    font-weight: bold;
+                    text-align: right;
+                  "
+                >
+                  The Matrix - 一个沉浸式体验 (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/the-matrix-in-beat-labs-an-immersive-experience:c"
+                  >
+                    完整视频
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div>
+                <a
+                  href="https://odysee.com/@BeatLabs:f/christmas-in-beat-labs:8"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/Christmas_in_Beat_Labs.webp"
+                  />
+                </a>
+                <p style="font-style: italic; font-weight: bold">
+                  Christmas in Beat Labs (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/christmas-in-beat-labs:8"
+                  >
+                    完整视频
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div style="text-align: right">
+                <a
+                  href="https://odysee.com/@BeatLabs:f/miracle-by-ellie-goulding-on-quest-3-in-passthrough:8"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/Miracle_by_Ellie_Goulding_on_Quest_3_in_Passthrough.webp"
+                  />
+                </a>
+                <p
+                  style="
+                    font-style: italic;
+                    font-weight: bold;
+                    text-align: right;
+                  "
+                >
+                  混合现实 - Miracle by Ellie Goulding (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/miracle-by-ellie-goulding-on-quest-3-in-passthrough:8"
+                  >
+                    完整视频
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <br />
+
+              <div>
+                <a
+                  href="https://odysee.com/@BeatLabs:f/the-motto-in-beat-labs-with-the-moon-rider-stylization:3"
+                >
+                  <img
+                    src="/static/beat-labs/pitch/The_Motto_by_Tiësto_and_Ava_Max_on_Beat_Labs.webp"
+                  />
+                </a>
+                <p style="font-style: italic; font-weight: bold">
+                  复古环境 - The Motto by Tiësto and Ava Max (
+                  <a
+                    href="https://odysee.com/@BeatLabs:f/the-motto-in-beat-labs-with-the-moon-rider-stylization:3"
+                  >
+                    完整视频
+                  </a>
+                  )
+                </p>
+              </div>
+
+              <hr />
+
+              <a name="market"></a>
+              <h2 class="section-title">
+                市场 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>Meta (Facebook) Quest 1, 2, 3</strong></p>
+                  <ul>
+                    <li>
+                      领先的VR/MR头盔，主要面向
+                      <strong>北美和欧洲的大众消费市场</strong>。
+                    </li>
+                    <li>
+                      迄今已售出超过
+                      <strong>2000万台</strong>。
+                    </li>
+                    <li>专用的Meta Quest商店提供游戏和应用。</li>
+                    <li>最近被中国允许进入他们的市场。</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/Quest-3.png"
+                    alt="Meta Quest 3"
+                    title="Meta Quest 3"
+                  />
+                  <p style="text-align: center">
+                    <strong>Quest 3</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>PICO 4</strong></p>
+                  <ul>
+                    <li>
+                      在东亚市场（如
+                      <strong>中国</strong>、韩国和日本）领先的VR/MR头盔。
+                    </li>
+                    <li>也在 <strong>欧洲</strong> 有销售。</li>
+                    <li>专用的PICO商店提供游戏和应用。</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/PICO-4.png"
+                    alt="PICO 4"
+                    title="PICO 4"
+                  />
+                  <p style="text-align: center">
+                    <strong>PICO 4</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>Apple Vision Pro</strong></p>
+                  <ul>
+                    <li>
+                      有望成为VR/MR市场的
+                      <strong>颠覆者</strong>。
+                    </li>
+                    <li>
+                      <strong>备受期待</strong>，将在整个VR/MR市场引起关注。
+                    </li>
+                    <li>
+                      专为VR/MR游戏和应用程序设计的<strong>应用商店</strong>。
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/Vision-Pro.png"
+                    alt="Apple Vision Pro"
+                    title="Apple Vision Pro"
+                  />
+                  <p style="text-align: center">
+                    <strong>Vision Pro</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p><strong>其他VR/MR头盔</strong></p>
+                  <ul>
+                    <li>
+                      大市场上有许多
+                      <strong>PC VR</strong>（有线）头盔与
+                      <strong>SteamVR</strong> - 是最大的游戏商店。
+                    </li>
+                    <li>
+                      <strong>Google & Samsung</strong>
+                      预计将于2024年加入VR/MR市场。
+                    </li>
+                    <li>
+                      <strong>Valve</strong>
+                      据报道正在研发他们自己的独立VR/MR头盔。
+                    </li>
+                    <li>
+                      <strong>Pimax</strong>
+                      推出了一款新颖的头盔，结合了任天堂Switch主机和独立VR/MR头盔（如Quest或PICO）的特色。
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <img
+                    src="/static/beat-labs/pitch/VR-Headsets.png"
+                    alt="其他VR/MR头盔"
+                    title="其他VR/MR头盔"
+                  />
+                  <p style="text-align: center">
+                    <strong>VR/MR头盔</strong>
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="audience"></a>
+              <h2 class="section-title">
+                受众 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                作为一个平台，Beat Labs 的目标是满足一个
+                <strong>多元化的玩家群体</strong> 的需求：
+              </p>
+
+              <ul>
+                <li>
+                  年轻成年人，<strong>常规玩家</strong>，通常寻找
+                  <strong>快节奏</strong>、反射基础、竞技性的游戏玩法。
+                </li>
+                <li>
+                  成年人，<strong>休闲玩家</strong>，通常寻找更
+                  <strong>轻松愉快</strong>
+                  的游戏玩法，在VR/MR环境中通常被用作一种保持
+                  <strong>健康</strong> 的方式。
+                </li>
+                <li>
+                  老年人 - 不断增长的休闲玩家群体，寻找新颖、有趣且
+                  <strong>轻松</strong> 的游戏玩法，也可以让他们保持
+                  <strong>良好的身形</strong>。
+                </li>
+              </ul>
+
+              <hr />
+
+              <a name="business"></a>
+              <h2 class="section-title">
+                业务 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>有许多潜在的赚钱方式可以应用于 Beat Labs：</p>
+
+              <ul>
+                <li>
+                  每个VR/MR头盔供应商都有或将有自己的
+                  <strong>专用商店</strong>。例如：Meta Quest Store、PICO
+                  Store、Apple App Store、Google Play。还有一个独立的门户和商店
+                  - <strong>SideQuest</strong> -
+                  允许玩家轻松安装第三方游戏和应用。
+                </li>
+                <li>
+                  最简单的方法是在这些商店中提供
+                  <strong>一次性购买</strong>。然而，我们可以做得更好。
+                </li>
+                <li>
+                  由于 Beat Labs
+                  是一个平台，具有实际上无限的内容可以为其创建，我们可以通过
+                  <strong>订阅</strong> 或使用虚拟或真实货币的
+                  <strong>微交易</strong>
+                  提供<strong>DLCs</strong>（可下载内容）。
+                </li>
+                <li>
+                  玩家可能愿意支付的
+                  <strong>可购买内容</strong> 的示例包括：
+                  <ul>
+                    <li><strong>歌曲</strong>（关卡）。</li>
+                    <li>
+                      游戏发生的<strong>环境</strong>。包括通用的视觉效果以及主题化的效果，例如万圣节、不同的节日、特定的音乐团队等。
+                    </li>
+                    <li>
+                      <strong>皮肤</strong> -
+                      用于武器、可破坏物体、头像等的3D模型。
+                    </li>
+                    <li>
+                      <strong>游戏机制</strong> -
+                      这些将允许玩家选择游戏的方式。挥动、拳打、击打、射击、防护、偏斜等等。
+                    </li>
+                    <li>
+                      <strong>Mods</strong> -
+                      可以引入主要功能的自定义游戏内修改，例如显示正在播放的歌曲的歌词，音乐视频的屏幕，视觉效果等等。
+                    </li>
+                    <li>
+                      声音和其他<strong>定制</strong> -
+                      以适应每个玩家独特的偏好。
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  另一个想法是，我们可以利用为 Beat Labs
+                  创建的代码、资产和基本上任何东西，来开发完全不同的游戏，可以单独推广和销售，使用我们认为适合它们的任何业务模型。
+                </li>
+              </ul>
+
+              <hr />
+
+              <a name="statistics"></a>
+              <h2 class="section-title">
+                统计数据 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                下面是来自不同分析平台的统计数据。
+                <strong>点击图像以放大</strong>。
+              </p>
+
+              <h4>‣&nbsp; Unity游戏服务 - 分析</h4>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-left">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/weekly-and-monthly-active-users-wau-and-mau.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/weekly-and-monthly-active-users-wau-and-mau.png"
+                      alt="周活跃用户和月活跃用户 - WAU和MAU"
+                      title="周活跃用户和月活跃用户 - WAU和MAU"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-right">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-active-users-dau.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-active-users-dau.png"
+                      alt="每日活跃用户（DAU）"
+                      title="每日活跃用户（DAU）"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/monthly-new-users.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/monthly-new-users.png"
+                      alt="每月新用户"
+                      title="每月新用户"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a
+                    href="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-new-users.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/UGS/2022-10-01-2023-12-31/daily-new-users.png"
+                      alt="每日新用户"
+                      title="每日新用户"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <h4>‣&nbsp; PICO实验室 - 用户参与度</h4>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-left">
+                  <h5>中国以外</h5>
+
+                  <h5 class="pico-chart-label">活跃用户趋势</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-outside-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-outside-china.png"
+                      alt="活跃用户趋势 - 中国以外"
+                      title="活跃用户趋势 - 中国以外"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">每用户的使用时间</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-outside-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-outside-china.png"
+                      alt="每用户的使用时间 - 中国以外"
+                      title="每用户的使用时间 - 中国以外"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">用户层叠趋势</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-outside-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-outside-china.png"
+                      alt="用户层叠趋势 - 中国以外"
+                      title="用户层叠趋势 - 中国以外"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-column-right">
+                  <h5>中国</h5>
+
+                  <h5 class="pico-chart-label">活跃用户趋势</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/active-users-trend-china.png"
+                      alt="活跃用户趋势 - 中国"
+                      title="活跃用户趋势 - 中国"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">每用户的使用时间</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/time-spent-per-user-china.png"
+                      alt="每用户的使用时间 - 中国"
+                      title="每用户的使用时间 - 中国"
+                    />
+                  </a>
+
+                  <h5 class="pico-chart-label">用户层叠趋势</h5>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-china.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/PICO-Lab/2023-07-01-2023-12-31/user-layering-trend-china.png"
+                      alt="用户层叠趋势 - 中国"
+                      title="用户层叠趋势 - 中国"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <h4>‣&nbsp; SideQuest - 应用指标</h4>
+
+              <div class="row">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 stats-column-left stats-column-right"
+                >
+                  <h4>Quest</h4>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-quest.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-quest.png"
+                      alt="应用指标 - Quest"
+                      title="应用指标 - Quest"
+                    />
+                  </a>
+
+                  <h4>PICO</h4>
+
+                  <a
+                    href="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-pico.png"
+                  >
+                    <img
+                      src="/static/beat-labs/pitch/stats/SideQuest/2022-10-01-2023-12-31/app-metrics-pico.png"
+                      alt="应用指标 - PICO"
+                      title="应用指标 - PICO"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="marketing"></a>
+              <h2 class="section-title">
+                市场营销 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                我们采用各种营销策略来扩大我们的玩家基础。在这些策略的核心是始终
+                <strong>优先考虑社区</strong>：
+              </p>
+
+              <ul>
+                <li>
+                  我们正在利用传统渠道进行
+                  <strong>广告</strong
+                  >，如Facebook以及在SideQuest上的促销机会（这是与Meta
+                  Quest和PICO兼容的第三方游戏和应用的中心）。
+                </li>
+                <li>
+                  我们正在通过Facebook群组、Discord服务器、Reddit等平台参与
+                  <strong>现有的游戏玩家和虚拟/扩展现实爱好者社区</strong>。
+                </li>
+                <li>
+                  我们与虚拟/扩展现实领域的游戏评论员和
+                  <strong>影响者</strong
+                  >合作，通过YouTube、Instagram或TikTok等渠道推广。
+                </li>
+                <li>
+                  随着Apple Vision
+                  Pro的推出，我们预计成为首批为该系统提供游戏的公司将在Apple App
+                  Store中获得显著的
+                  <strong>可见性</strong>。
+                </li>
+              </ul>
+
+              <hr />
+
+              <a name="team"></a>
+              <h2 class="section-title">
+                团队 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                <strong>
+                  <a href="https://www.linkedin.com/in/marekstoj/">
+                    ‣&nbsp; Marek Stój
+                  </a>
+                </strong>
+              </p>
+              <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <p>
+                    一位
+                    <strong>经验丰富的软件开发者</strong
+                    >。在他超过15年的职业生涯中，他使用过
+                    <strong>.NET</strong
+                    >、<strong>C#</strong>、Android、Java、Big Data、Scala、
+                    <strong>Unity 3D</strong
+                    >等多种技术。过去几年，他一直致力于实现他在
+                    <strong>游戏开发</strong>行业的梦想。
+                  </p>
+
+                  <p>
+                    <a href="https://www.linkedin.com/in/marekstoj/">
+                      <i class="fa-brands fa-linkedin"></i>
+                      www.linkedin.com/in/marekstoj
+                    </a>
+                  </p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <a href="https://www.linkedin.com/in/marekstoj/">
+                    <img
+                      src="/static/beat-labs/pitch/marek-stoj.png"
+                      alt="Marek Stój"
+                      title="Marek Stój"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <p>
+                <strong>
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">‣&nbsp; 社区</a>
+                </strong>
+              </p>
+              <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <p>
+                    围绕Beat
+                    Labs聚集的社区最终使该平台变得强大。玩家和内容创作者，如自定义级别设计师、3D建模师和模块制作者，在这里都是一流的用户。他们的声音被听到，并在制定
+                    <strong>Beat Labs的方向和形状</strong>时起到了巨大作用。
+                  </p>
+
+                  <p>
+                    <a href="https://dsc.gg/beatlabs?ref=pitch">
+                      <i class="fa-brands fa-discord"></i>
+                      dsc.gg/beatlabs
+                    </a>
+                  </p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    <img
+                      src="/static/beat-labs/pitch/beat-labs-discord.png"
+                      alt="Beat Labs Discord"
+                      title="Beat Labs Discord"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <p>
+                <strong>‣&nbsp; 招聘</strong>
+              </p>
+
+              <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <p>
+                    我们一直在寻找有激情的专业人士（初级岗位也可）加入我们的团队。以下是我们希望看到的一些（非详尽无遗）职位列表：
+                  </p>
+
+                  <ul>
+                    <li>
+                      <strong>图形程序员</strong> - Unity
+                      3D、着色器、特效、优化等。
+                    </li>
+                    <li><strong>3D艺术家</strong> - 模型、动画、低多边形。</li>
+                    <li>
+                      <strong>游戏开发者</strong> - Unity 3D、游戏玩法和逻辑。
+                    </li>
+                    <li>
+                      <strong>后端开发者</strong> - C#和Microsoft Azure云。
+                    </li>
+                    <li><strong>UI/UX工程师</strong> - web和Unity 3D。</li>
+                    <li><strong>音乐家</strong> 任何乐器，任何风格。</li>
+                    <li><strong>声音设计师</strong> DAW，合成器等。</li>
+                    <li><strong>社区经理</strong> - Discord，社交媒体。</li>
+                    <li>
+                      <strong>营销专员</strong> - 营销活动，社交媒体，SEO。
+                    </li>
+                    <li><strong>AI专家</strong> - LLMs，ChatGPT，数据分析。</li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    <img
+                      src="/static/beat-labs/pitch/you-must-gather-your-party-before-venturing-forth.jpg"
+                      alt="你必须集合你的小队然后踏上冒险之旅"
+                      title="你必须集合你的小队然后踏上冒险之旅"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <a name="contact"></a>
+              <h2 class="section-title">
+                联系 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                欢迎通过在
+                <a href="#links">链接</a
+                >部分列出的任何社交媒体平台或电子邮件联系我们：
+                <a href="mailto:beat.labs.game@gmail.com">
+                  beat.labs.game@gmail.com </a
+                >。
+              </p>
+
+              <hr />
+
+              <a name="links"></a>
+              <h2 class="section-title">
+                链接 <a href="#agenda" class="go-to-agenda">▲</a>
+              </h2>
+
+              <p>
+                <strong>网站：</strong>
+                <a href="https://www.beatlabs.dev/">www.beatlabs.dev</a>
+              </p>
+              <p>
+                <strong>SideQuest（Quest版本）：</strong>
+                <a href="https://sidequestvr.com/app/3832/beat-labs">
+                  sidequestvr.com/app/3832/beat-labs
+                </a>
+              </p>
+              <p>
+                <strong>SideQuest（Pico版本）：</strong>
+                <a href="https://sidequestvr.com/app/12483/beat-labs-for-pico">
+                  sidequestvr.com/app/12483/beat-labs-for-pico
+                </a>
+              </p>
+              <p>
+                <strong>Discord：</strong>
+                <a href="https://dsc.gg/beatlabs?ref=pitch">
+                  dsc.gg/beatlabs
+                </a>
+              </p>
+              <p>
+                <strong>Facebook：</strong>
+                <a href="https://www.facebook.com/BeatLabsGame">
+                  www.facebook.com/BeatLabsGame
+                </a>
+              </p>
+              <p>
+                <strong>YouTube：</strong>
+                <a href="https://odysee.com/@BeatLabs:f">
+                  odysee.com/@BeatLabs:f
+                </a>
+              </p>
+              <p>
+                <strong>Instagram：</strong>
+                <a href="https://www.instagram.com/beat.labs.game">
+                  www.instagram.com/beat.labs.game
+                </a>
+              </p>
+              <p>
+                <strong>TikTok：</strong>
+                <a href="https://www.tiktok.com/@beat.labs.game">
+                  www.tiktok.com/@beat.labs.game
+                </a>
+              </p>
+              <p>
+                <strong>itch.io：</strong>
+                <a href="https://marek-stoj.itch.io/beat-labs">
+                  marek-stoj.itch.io/beat-labs
+                </a>
+                <img
+                  src="/static/beat-labs/img/music-notes-2.png"
+                  alt=""
+                  style="float: right"
+                />
+              </p>
+              <p>
+                <strong>LinkedIn：</strong>
+                <a href="https://www.linkedin.com/company/beat-labs-vr/">
+                  www.linkedin.com/company/beat-labs-vr/
+                </a>
+              </p>
+              <p>
+                <strong>Patreon：</strong>
+                <a href="https://www.patreon.com/BeatLabs">
+                  www.patreon.com/BeatLabs
+                </a>
+              </p>
+
+              <hr />
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-widgets">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <p>
+                &copy; 2021
+                <script>
+                  new Date().getFullYear() > 2017 &&
+                    document.write(" - " + new Date().getFullYear());
+                </script>
+                |
+                <a href="/zh/privacy-policy/">隐私政策</a>
+              </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-right">
+              <ul>
+                <li>
+                  <a href="https://www.patreon.com/BeatLabs">
+                    <i class="fa-brands fa-patreon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://dsc.gg/beatlabs?ref=pitch">
+                    <i class="fa-brands fa-discord"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/BeatLabsGame">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://odysee.com/@BeatLabs:f">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/beat.labs.game">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@beat.labs.game">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://marek-stoj.itch.io/beat-labs">
+                    <i class="fa-brands fa-itch-io"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/beat-labs-vr/">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
