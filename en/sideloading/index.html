@@ -1,0 +1,412 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- TEMPLATE BEGIN: meta -->
+    <meta property="og:site_name" content="Groovy Labs" />
+    <meta property="og:url" content="https://www.groovylabsgame.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Groovy Labs" />
+    <meta
+      property="og:description"
+      content="An Open Sandbox for Rhythm Games in Virtual and Mixed Reality (VR/MR)."
+    />
+    <meta
+      property="og:image"
+      content="https://www.groovylabsgame.com/static/groovy-labs/img/meta-image.jpg"
+    />
+    <meta
+      property="og:video"
+      content="https://odysee.com/@BeatLabs:f/beat-labs-retro-drive:b"
+    />
+
+    <meta property="og:locale" content="en_US" />
+    <!-- <meta property="og:locale:alternate" content="en_US" /> -->
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <!-- TEMPLATE END: meta -->
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Groovy Labs</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/groovy-labs/site.css?v=4" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,700i"
+      rel="stylesheet"
+    />
+
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/fontawesome-free-6.4.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <script src="/static/groovy-labs/site.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BFS97CHYWG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BFS97CHYWG");
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="default-header header">
+            <div class="logo">
+              <a href="/en/">Groovy Labs</a>
+              <br />
+              <i>Find Your Rhythm</i>
+            </div>
+            <div class="header-holder">
+              <div class="hamburger display-none">
+                <a href="#">
+                  <div class="hamburger-inner"></div>
+                </a>
+              </div>
+              <div class="menu-holder">
+                <nav>
+                  <ul id="menu" class="menu">
+                    <li>
+                      <a href="/en/">Home</a>
+                    </li>
+                    <li>
+                      <a href="/en/song-mapping">Songs</a>
+                    </li>
+                    <li>
+                      <a href="/en/pitch">Pitch</a>
+                    </li>
+                    <li>
+                      <select
+                        id="languageSelect"
+                        onchange="redirectToSelectedLanguagePage()"
+                      >
+                        <option value="/en/sideloading">English</option>
+                        <option value="/en/sideloading">Polish</option>
+                        <option value="/en/sideloading">German</option>
+                        <option value="/en/sideloading">Chinese</option>
+                        <option value="/en/sideloading">Korean</option>
+                        <option value="/en/sideloading">French</option>
+                        <option value="/en/sideloading">Japanese</option>
+                      </select>
+                      <script>
+                        initSelectedLanguageSelectValue();
+                      </script>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="project-single">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <a name="intro"></a>
+              <h2>Intro</h2>
+
+              <p>
+                Dear Players! Recently I've been forced to make changes to
+                Groovy Labs, due to legal complaints from Meta (sic!). I'm
+                hoping that in the coming weeks I can work out formula(s) for
+                gameplays that will be satisfying to you and which the Meta will
+                be OK with.
+              </p>
+              <p>
+                If you'd like to play the previous version of the game, that has
+                gameplay similar to Beat Saber's, you can follow the guide
+                below. It's a bit of a hassle, but it's the only way to play
+                this version, as there is no chance it can be available in the
+                official Meta Quest Store.
+              </p>
+
+              <h3 style="margin-bottom: 25px">Prerequisites</h3>
+
+              <h4>1. Enable Developer Mode on your Quest</h4>
+
+              <p>
+                Follow this guide:
+                <a
+                  href="https://learn.adafruit.com/sideloading-on-oculus-quest/enable-developer-mode"
+                  >Enable Developer Mode on Quest</a
+                >
+              </p>
+
+              <p>
+                Or this one:
+                <a href="https://www.youtube.com/watch?v=QPInS5xxF-0"
+                  >How to Turn On Developer Mode on Meta Quest 2/3/Pro
+                </a>
+              </p>
+
+              <h4>2. Install SideQuest on your PC/Mac</h4>
+
+              <p>
+                Go to
+                <a href="https://sidequestvr.com/setup-howto"
+                  >SideQuest How-To</a
+                >
+                and follow the Advanced Installer guide.
+              </p>
+
+              <h3>Grab the Groovy Labs APK</h3>
+
+              <p>
+                You can download the APKs (installable files) from the following
+                link:
+              </p>
+
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/marek-stoj/Groovy-Labs-Builds/releases"
+                    >Groovy Labs Builds</a
+                  >
+                </li>
+              </ul>
+
+              <p>You're specifically interested in the v1.3 release:</p>
+
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/marek-stoj/Groovy-Labs-Builds/releases/download/v1.3/Groovy-Labs-v1.3-Quest-SideQuest.apk"
+                    >Groovy Labs v1.3 APK</a
+                  >
+                </li>
+              </ul>
+
+              <h3>Sideload (install) the APK</h3>
+
+              <ol>
+                <li>
+                  Plug in your Oculus Quest to your computer. Connect your
+                  headset to your PC/Mac via your USB-C cable.
+                </li>
+                <li>Open SideQuest.</li>
+                <li>
+                  Click Install APK from folder.
+                  <div style="text-align: center; margin: 10px 0">
+                    <img src="/static/groovy-labs/img/sq-sideload-apk-01.jpg" />
+                  </div>
+                </li>
+                <li>Select the downloaded APK file.</li>
+                <li>
+                  Wait for it to install. You can check the progress by clicking
+                  the pink '1'.
+                  <div style="text-align: center; margin: 10px 0">
+                    <img src="/static/groovy-labs/img/sq-sideload-apk-02.jpg" />
+                  </div>
+                </li>
+              </ol>
+
+              <h3>Community</h3>
+
+              <p>
+                Should you have any questions or problems, feel free to join the
+                <a href="https://dsc.gg/groovylabs?ref=sideloading"
+                  >Groovy Labs Discord Server</a
+                >
+                and visit the
+                <a href="https://www.facebook.com/GroovyLabsGame"
+                  >Groovy Labs Facebook Page</a
+                >. Then ask away - we'll be happy to help!
+              </p>
+
+              <table align="center">
+                <tbody>
+                  <tr>
+                    <td style="padding: 0 20 0 20">
+                      <p style="text-align: center">
+                        <a href="https://dsc.gg/groovylabs?ref=sideloading">
+                          <img
+                            src="/static/groovy-labs/img/discord-button.png"
+                            alt="Groovy Labs Community Discord"
+                          />
+                        </a>
+                      </p>
+                    </td>
+                    <td style="padding: 0 20 0 20">
+                      <p style="text-align: center">
+                        <a href="https://www.facebook.com/GroovyLabsGame">
+                          <img
+                            src="/static/groovy-labs/img/facebook-button.png"
+                            alt="Groovy Labs Community Facebook Page"
+                          />
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3>Support the Development</h3>
+
+              <p>
+                The <strong>game is free</strong> but you can support my efforts
+                in continuing its development via
+                <a href="/paypal">PayPal</a> or
+                <a href="/patreon-buy">Patreon</a>.
+              </p>
+
+              <p>
+                If you decide to donate, besides helping me out, you'll also get
+                a Supporter Key, which you can enter within the game and get rid
+                of the popup which shows up every now and then, interrupting the
+                fun.
+              </p>
+
+              <table align="center">
+                <tbody>
+                  <tr>
+                    <td style="padding: 0 20 0 20">
+                      <form
+                        action="https://www.paypal.com/donate"
+                        method="post"
+                        target="_top"
+                      >
+                        <input
+                          type="hidden"
+                          name="hosted_button_id"
+                          value="LRJNPQXGZVUES"
+                        />
+                        <input
+                          type="image"
+                          src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                          border="0"
+                          name="submit"
+                          title="PayPal - The safer, easier way to pay online!"
+                          alt="Donate with PayPal button"
+                          style="height: 33px; margin-top: 10px"
+                        />
+                        <img
+                          alt=""
+                          border="0"
+                          src="https://www.paypal.com/en_PL/i/scr/pixel.gif"
+                          width="1"
+                          height="1"
+                        />
+                      </form>
+                    </td>
+                    <td style="padding: 0 20 0 20">
+                      <p style="text-align: center">
+                        <a href="/patreon-buy">
+                          <img
+                            src="/static/groovy-labs/img/patreon-button.png"
+                            alt="Patreon Page"
+                            style="height: 34px"
+                          />
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-widgets">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <p>
+                &copy; 2021
+                <script>
+                  new Date().getFullYear() > 2021 &&
+                    document.write(" - " + new Date().getFullYear());
+                </script>
+                |
+                <a href="/en/privacy-policy/">privacy policy</a>
+              </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-right">
+              <ul>
+                <li>
+                  <a href="https://www.patreon.com/GroovyLabs">
+                    <i class="fa-brands fa-patreon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://dsc.gg/groovylabs?ref=sideloading">
+                    <i class="fa-brands fa-discord"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/GroovyLabsGame">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://odysee.com/@BeatLabs:f">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/groovy.labs.game">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@groovy.labs.game">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://marek-stoj.itch.io/groovy-labs">
+                    <i class="fa-brands fa-itch-io"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
