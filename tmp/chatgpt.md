@@ -50,7 +50,7 @@ Certainly! Here are some suggested improvements to the text:
    - "Meet Marek Stój, an experienced software developer with over 15 years in .NET, C#, Android, Java, Big Data, Scala, and Unity 3D. His expertise fuels Groovy Labs' vision in the game development industry."
 
 8. **Community:**
-   - "Our vibrant community, comprising players, custom level designers, 3D modelers, and modders, actively contributes to Groovy Labs' evolution. Visit dsc.gg/groovylabs to join the conversation."
+   - "Our vibrant community, comprising players, custom level designers, 3D modelers, and modders, actively contributes to Groovy Labs' evolution. Visit dsc.gg/bodymindgames to join the conversation."
 
 Remember to integrate these suggestions in a way that maintains the flow and coherence of your pitch.
 
@@ -88,7 +88,7 @@ Remember to integrate these suggestions in a way that maintains the flow and coh
    - "Meet Marek Stój, our software wizard with a resume longer than a shopping list during Black Friday. He's been coding since floppy disks were a thing, and now he's here, turning Groovy Labs into a rhythm revolution."
 
 8. **Community:**
-   - "Our community isn't just a bunch of gamers; it's a family of rhythm rebels, custom creators, and modding maestros. Join the fun at dsc.gg/groovylabs and be part of the party - virtual confetti included!"
+   - "Our community isn't just a bunch of gamers; it's a family of rhythm rebels, custom creators, and modding maestros. Join the fun at dsc.gg/bodymindgames and be part of the party - virtual confetti included!"
 
 ========================================
 
@@ -168,7 +168,7 @@ A maestro of software, at Groovy Labs' core.
 In the community, a vibrant blend,
 Players, designers, modders, attend.
 A collective voice, shaping the beat,
-Join the discourse, at dsc.gg/groovylabs, take a seat.
+Join the discourse, at dsc.gg/bodymindgames, take a seat.
 
 ========================================
 
@@ -248,7 +248,7 @@ A software maestro, at the Groovy Labs core.
 In the community mix, it's a lively scene,
 Players, designers, modders, in between.
 Raise your voice, shape the beat,
-Join the discourse, at dsc.gg/groovylabs, take a seat.
+Join the discourse, at dsc.gg/bodymindgames, take a seat.
 
 ========================================
 
