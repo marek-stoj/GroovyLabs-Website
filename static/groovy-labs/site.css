@@ -537,3 +537,13 @@ p {
 .para-and-gif-row {
   margin-bottom: 10px;
 }
+
+.press-kit-image {
+  width: 100%;
+  height: auto;
+}
+
+.press-kit-image-label {
+  text-align: center;
+  margin-top: -12px;
+}
