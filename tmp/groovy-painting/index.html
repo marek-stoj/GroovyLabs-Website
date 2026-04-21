@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="http://localhost:55068/ad1c6f92-a553-4a99-8bc1-d0e562977b60/" />
+  <title>Groovy Labs Audio-Visual Ideas.md</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link href="bundled/default-markdown.css" rel="stylesheet" />
+	<link href="bundled/katex.css" rel="stylesheet" />
+	<link href="bundled/colour-scheme.css" rel="stylesheet" />
+	<link href="bundled/settings.css" rel="stylesheet" />
+  	<script src="bundled/smiles-drawer.min.js" type="application/javascript"></script>
+
+  <script type="application/javascript">
+    function printAndClose(enabled) {
+      if (typeof SmiDrawer === "function") {
+        const svgs = document.querySelectorAll('svg[data-smiles]');
+        svgs.forEach(function(svg) {
+          var smiles = svg.getAttribute('data-smiles');
+          const configJson = svg.getAttribute('data-smiles-config');
+          let moleculeOptions;
+          let reactionOptions;
+          if (configJson) {
+            try {
+              // decodeURIComponent to match encodeURIComponent in processMarkdown.ts
+              var parsedConfig = JSON.parse(decodeURIComponent(configJson));
+              moleculeOptions = parsedConfig.moleculeOptions ?? {};
+              reactionOptions = parsedConfig.reactionOptions ?? {};
+            } catch (e) {
+              // ignore, fallback to empty options
+            }
+          }
+          var parent = svg.parentNode;
+          var errorDiv = document.createElement('div');
+          errorDiv.style.color = 'red';
+          errorDiv.style.fontFamily = 'monospace';
+          errorDiv.style.background = '#fff0f0';
+          errorDiv.style.border = '1px solid #f88';
+          errorDiv.style.padding = '0.5em 1em';
+          errorDiv.style.margin = '0.5em 0';
+          function showError(msg) {
+            if (parent) {
+              var pre = document.createElement('pre');
+              pre.textContent = msg;
+              errorDiv.appendChild(pre);
+              parent.replaceChild(errorDiv, svg);
+            }
+          }
+          try {
+            var drawer = new SmiDrawer(moleculeOptions, reactionOptions);
+            SmilesDrawer.parse(smiles, function(tree) {
+              drawer.draw(smiles, svg);
+            }, function(err) {
+              showError('Invalid SMILES: ' + smiles + (err ? '\n' + err : ''));
+            });
+          } catch (err) {
+            showError('Invalid SMILES: ' + smiles + (err ? '\n' + err : ''));
+          }
+        });
+      }
+      if (enabled) {
+        window.addEventListener("afterprint", (event) => {
+          fetch("completed").then(window.close);
+        });
+        setTimeout(window.print, 500);
+      }
+    }
+    function listenForUpdates() {
+      const ws = new WebSocket(`ws://localhost:${window.location.port}`);
+      ws.onopen = function () {
+        const sessionId = window.location.pathname.split("/")[1];
+        ws.send(JSON.stringify({ sessionId: sessionId }));
+      };
+      ws.onmessage = function (event) {
+        const message = JSON.parse(event.data);
+        if (message.type === 'refreshPreview') {
+          const scrollOffset = window.scrollY;
+          ws.send(JSON.stringify({ type: 'scrollOffset', value: scrollOffset }));
+          location.reload();
+        } else if (message.type === 'restoreScroll') {
+          const setScrollPosition = () => {
+            window.scrollTo(0, message.scrollOffset);
+          };
+          if (document.readyState === 'complete') {
+            setScrollPosition();
+          } else {
+            window.addEventListener('load', setScrollPosition);
+            const images = document.querySelectorAll('img');
+            let loadedImages = 0;
+            images.forEach(img => {
+              if (img.complete) {
+                loadedImages++;
+              } else {
+                img.addEventListener('load', () => {
+                  loadedImages++;
+                  if (loadedImages === images.length) {
+                    setScrollPosition();
+                  }
+                });
+              }
+            });
+          }
+        }
+      };
+
+      document.querySelectorAll('[data-source-map]')
+        .forEach(element => {
+          element.addEventListener('click', () => document.querySelector('.xref-highlight')?.classList.remove('xref-highlight'));
+          element.addEventListener('dblclick', () => {
+            const text = element.getAttribute('data-source-map');
+            ws.send(JSON.stringify({ type: 'findInEditor', value: text }));
+            element.classList.add('xref-highlight');
+          });
+        });
+    };
+  </script>
+</head>
+
+<body onload="listenForUpdates();printAndClose(false);">
+  <h3 class="filepath">Groovy Labs Audio-Visual Ideas.md</h3>
+  <div>
+    <h1 data-source-map="IyBRdWVzdGlvbgoK">Question</h1>
+<p data-source-map="SSBoYXZlIHRoaXMgaWRlYS4gV2hhdCBpZiB3ZSBjb3VsZCB0YWtlIHNlbnNvciBkYXRhIC0gaGVhZHNldCwgY29udHJvbGxlcnMsIGhhbmRzLCBmdWxsIGJvZHkgZXN0aW1hdGlvbiBldGMuIGFuZCBzb21laG93IG1hcCBpdCB0byBmcmVxdWVuY2llcyBhbmQgdGhlbiB0byBXYXZlQmluZGVyL0F1ZGlvTGluay4gVGhpcyBjb3VsZCBsZXQgcGVvcGxlIGNoYW5nZSB2aXN1YWxzIHdpdGggdGhlaXIgbW92ZW1lbnQsIHJpZ2h0PyBCdXQgaG93IHRvIG1hcCBtb3ZlbWVudCB0byBmcmVxdWVuY2llcz8g8J+klA==">I have this idea. What if we could take sensor data - headset, controllers, hands, full body estimation etc. and somehow map it to frequencies and then to WaveBinder/AudioLink. This could let people change visuals with their movement, right? But how to map movement to frequencies? 🤔</p>
+<h1 data-source-map="IyBBbnN3ZXIKCg==">Answer</h1>
+<p data-source-map="WWVzLiBUaGF0IGlzIGEgdmVyeSBnb29kIGlkZWEu">Yes. That is a very good idea.</p>
+<p data-source-map="V2hhdCB5b3UgYXJlIGRlc2NyaWJpbmcgaXMgYmFzaWNhbGx5IHR1cm5pbmcgdGhlIHBsYXllciBpbnRvIGEgbGl2ZSBtb2R1bGF0aW9uIHNvdXJjZS4gTm90IGp1c3QgIm11c2ljIGRyaXZlcyB2aXN1YWxzIiwgYnV0ICJtdXNpYyArIGJvZHkgZHJpdmVzIHZpc3VhbHMiLiBUaGUgcGxheWVyIGJlY29tZXMgcGFydCBpbnN0cnVtZW50LCBwYXJ0IHNwZWxsY2FzdGVyLCBwYXJ0IHdhbGtpbmcgc2lnbmFsIHByb2Nlc3NvciDwn46b77iP8J+Vug==">What you are describing is basically turning the player into a live modulation source. Not just &quot;music drives visuals&quot;, but &quot;music + body drives visuals&quot;. The player becomes part instrument, part spellcaster, part walking signal processor 🎛️🕺</p>
+<p data-source-map="QW5kIHllcywgdGhlIG1haW4gdHJpY2sgaXMgdGhpczo=">And yes, the main trick is this:</p>
+<p data-source-map="KipkbyBub3QgbGl0ZXJhbGx5IG1hcCBtb3ZlbWVudCBkaXJlY3RseSB0byBhdWRpbyBmcmVxdWVuY2llcyBhdCBmaXJzdC4qKgpNYXAgbW92ZW1lbnQgdG8gKipjb250cm9sIHNpZ25hbHMqKiwgdGhlbiBvcHRpb25hbGx5IHByb2plY3QgdGhvc2Ugc2lnbmFscyBpbnRvIGZyZXF1ZW5jeSBiYW5kcy4="><strong>do not literally map movement directly to audio frequencies at first.</strong>
+Map movement to <strong>control signals</strong>, then optionally project those signals into frequency bands.</p>
+<p data-source-map="QmVjYXVzZSAiZnJlcXVlbmN5IiBpbiBhdWRpby1sYW5kIGlzIGEgd2VpcmQgYmVhc3QuIEEgaGFuZCBtb3ZpbmcgbGVmdCBpcyBub3QgbmF0dXJhbGx5ICI2MyBIeiIuIElmIHlvdSBmb3JjZSBpdCB0b28gZWFybHksIHRoZSBzeXN0ZW0gYmVjb21lcyBhcmJpdHJhcnkgYW5kIGhhcmQgdG8gYXV0aG9yLg==">Because &quot;frequency&quot; in audio-land is a weird beast. A hand moving left is not naturally &quot;63 Hz&quot;. If you force it too early, the system becomes arbitrary and hard to author.</p>
+<h2 data-source-map="IyMgRGVwaWN0aW9uIG9mIHdoYXQgZm9sbG93cwoK">Depiction of what follows</h2>
+<p data-source-map="Q2xpY2sgdG8gZW5sYXJnZS4=">Click to enlarge.</p>
+<div data-source-map="innerHTML"><a href="./Groovy-Painting.jpg" target="_blank">
+  <img src="./Groovy-Painting.jpg" alt="Groovy Labs Audio-Visual Ideas" style="width: 100%;">
+</a>
+
+</div><h2 data-source-map="IyMgVGhlIGNsZWFuIG1lbnRhbCBtb2RlbAoK">The clean mental model</h2>
+<p data-source-map="VXNlIDMgbGF5ZXJzOg==">Use 3 layers:</p>
+<ol>
+<li data-source-map="MS4gKipzZW5zb3IgZmVhdHVyZXMqKgoKICAgKiBoZWFkIHZlbG9jaXR5CiAgICogaGFuZCBzcGVlZAogICAqIGhhbmQgaGVpZ2h0CiAgICogZGlzdGFuY2UgYmV0d2VlbiBoYW5kcwogICAqIGFuZ3VsYXIgdmVsb2NpdHkKICAgKiBib2R5IGxlYW4KICAgKiBjcm91Y2ggYW1vdW50CiAgICogaGFuZCBvcGVubmVzcwogICAqIGNvbnRyb2xsZXIgYWNjZWxlcmF0aW9uCiAgICogZm9vdHN0ZXAgY2FkZW5jZQogICAqIGdlc3R1cmUgY29uZmlkZW5jZQogICAqIGZ1bGwtYm9keSBzeW1tZXRyeSAvIGFzeW1tZXRyeQoK"><p><strong>sensor features</strong></p>
+<ul>
+<li>head velocity</li>
+<li>hand speed</li>
+<li>hand height</li>
+<li>distance between hands</li>
+<li>angular velocity</li>
+<li>body lean</li>
+<li>crouch amount</li>
+<li>hand openness</li>
+<li>controller acceleration</li>
+<li>footstep cadence</li>
+<li>gesture confidence</li>
+<li>full-body symmetry / asymmetry</li>
+</ul>
+</li>
+<li data-source-map="Mi4gKiphYnN0cmFjdCBleHByZXNzaXZlIGNoYW5uZWxzKioKCiAgICogZW5lcmd5CiAgICogZmxvdwogICAqIHB1bmNoCiAgICogdGVuc2lvbgogICAqIHNwcmVhZAogICAqIHR3aXN0CiAgICogYmFsYW5jZQogICAqIGNoYW9zCiAgICogc3RpbGxuZXNzCiAgICogdmVydGljYWxpdHkKCg=="><p><strong>abstract expressive channels</strong></p>
+<ul>
+<li>energy</li>
+<li>flow</li>
+<li>punch</li>
+<li>tension</li>
+<li>spread</li>
+<li>twist</li>
+<li>balance</li>
+<li>chaos</li>
+<li>stillness</li>
+<li>verticality</li>
+</ul>
+</li>
+<li data-source-map="My4gKip2aXN1YWwvYXVkaW8tcmVhY3RpdmUgdGFyZ2V0cyoqCgogICAqIGxvdyBiYW5kIG1vZHVsYXRpb24KICAgKiBtaWQgYmFuZCBtb2R1bGF0aW9uCiAgICogaGlnaCBiYW5kIG1vZHVsYXRpb24KICAgKiBodWUgc2hpZnQKICAgKiBibG9vbQogICAqIGRpc3RvcnRpb24KICAgKiBwYXJ0aWNsZSBlbWlzc2lvbgogICAqIHR1bm5lbCB3YXJwCiAgICogcHVsc2UgcmF0ZQogICAqIHNoYWRlciBwYXJhbWV0ZXJz"><p><strong>visual/audio-reactive targets</strong></p>
+<ul>
+<li>low band modulation</li>
+<li>mid band modulation</li>
+<li>high band modulation</li>
+<li>hue shift</li>
+<li>bloom</li>
+<li>distortion</li>
+<li>particle emission</li>
+<li>tunnel warp</li>
+<li>pulse rate</li>
+<li>shader parameters</li>
+</ul>
+</li>
+</ol>
+<p data-source-map="VGhhdCBpcyB0aGUgZ29sZGVuIHBhdGgu">That is the golden path.</p>
+<h2 data-source-map="IyMgV2h5IG5vdCBtYXAgbW92ZW1lbnQgc3RyYWlnaHQgdG8gZnJlcXVlbmNpZXM/Cgo=">Why not map movement straight to frequencies?</h2>
+<p data-source-map="QmVjYXVzZSBmcmVxdWVuY2llcyBpbXBseSBvc2NpbGxhdGlvbiBvdmVyIHRpbWUu">Because frequencies imply oscillation over time.</p>
+<p data-source-map="QSByYXcgcG9zaXRpb24gaXMgbm90IGEgZnJlcXVlbmN5LgpBIHZlbG9jaXR5IHNwaWtlIGlzIG5vdCBhIGZyZXF1ZW5jeS4KQSBwb3NlIGlzIG5vdCBhIGZyZXF1ZW5jeS4=">A raw position is not a frequency.
+A velocity spike is not a frequency.
+A pose is not a frequency.</p>
+<p data-source-map="QSBmcmVxdWVuY3kgbWVhbnMgc29tZXRoaW5nIHJlcGVhdGluZyB3aXRoIHNvbWUgcGVyaW9kaWNpdHku">A frequency means something repeating with some periodicity.</p>
+<p data-source-map="U28geW91IGhhdmUgdHdvIGRpZmZlcmVudCBraW5kcyBvZiBtYXBwaW5nOg==">So you have two different kinds of mapping:</p>
+<h3 data-source-map="IyMjIDEuIEZlYXR1cmUtdG8tYmFuZCB3ZWlnaHRpbmcKCg==">1. Feature-to-band weighting</h3>
+<p data-source-map="WW91IGRvICoqc2VtYW50aWMgcm91dGluZyoqOg==">You do <strong>semantic routing</strong>:</p>
+<ul>
+<li data-source-map="KiBzdHJvbmcgZG93bndhcmQgc2xhc2ggLT4gYm9vc3QgbG93IGJhbmQK">strong downward slash -&gt; boost low band</li>
+<li data-source-map="KiBsYXRlcmFsIHN3ZWVwIC0+IGJvb3N0IG1pZHMK">lateral sweep -&gt; boost mids</li>
+<li data-source-map="KiBmaW5nZXIgaml0dGVyIC8gc3BhcmtsZSBtb3Rpb24gLT4gYm9vc3QgaGlnaHMK">finger jitter / sparkle motion -&gt; boost highs</li>
+<li data-source-map="KiBjcm91Y2ggcmlzZSAtPiBzdWIgc3dlbGwK">crouch rise -&gt; sub swell</li>
+<li data-source-map="KiB0b3JzbyB0d2lzdCAtPiBtaWQgcmVzb25hbmNl">torso twist -&gt; mid resonance</li>
+</ul>
+<p data-source-map="VGhpcyBpcyBub3QgInJlYWwgZnJlcXVlbmN5IGFuYWx5c2lzIiBvZiB0aGUgYm9keS4KSXQgaXMgZXhwcmVzc2l2ZSBtYXBwaW5nLCB3aGljaCBpcyBvZnRlbiBiZXR0ZXIu">This is not &quot;real frequency analysis&quot; of the body.
+It is expressive mapping, which is often better.</p>
+<h3 data-source-map="IyMjIDIuIE1vdGlvbi1hcy1zaWduYWwgYW5hbHlzaXMKCg==">2. Motion-as-signal analysis</h3>
+<p data-source-map="WW91IHRyZWF0IG1vdmVtZW50IG92ZXIgdGltZSBhcyBhIHdhdmVmb3JtIGFuZCBhbmFseXplIGl0Lg==">You treat movement over time as a waveform and analyze it.</p>
+<p data-source-map="RXhhbXBsZTo=">Example:</p>
+<ul>
+<li data-source-map="KiB0YWtlIHJpZ2h0IGhhbmQgWSBwb3NpdGlvbiBvdmVyIHRpbWUK">take right hand Y position over time</li>
+<li data-source-map="KiBzdG9yZSBsYXN0IDEtMiBzZWNvbmRzCg==">store last 1-2 seconds</li>
+<li data-source-map="KiBydW4gc21vb3RoaW5nCg==">run smoothing</li>
+<li data-source-map="KiBvcHRpb25hbGx5IHJ1biBGRlQgLyBhdXRvY29ycmVsYXRpb24gLyB6ZXJvLWNyb3NzaW5nIC8gYmFuZC1wYXNzIGZpbHRlcnMK">optionally run FFT / autocorrelation / zero-crossing / band-pass filters</li>
+<li data-source-map="KiBlc3RpbWF0ZSBkb21pbmFudCBvc2NpbGxhdGlvbiByYXRl">estimate dominant oscillation rate</li>
+</ul>
+<p data-source-map="VGhlbjo=">Then:</p>
+<ul>
+<li data-source-map="KiBzbG93IGN5Y2xpY2FsIGFybSB3YXZlIG1pZ2h0IGJlY29tZSBsb3ctZnJlcXVlbmN5IG1vZHVsYXRpb24K">slow cyclical arm wave might become low-frequency modulation</li>
+<li data-source-map="KiBmYXN0IHdyaXN0IHNoYWtpbmcgbWlnaHQgYmVjb21lIGhpZ2gtZnJlcXVlbmN5IG1vZHVsYXRpb24=">fast wrist shaking might become high-frequency modulation</li>
+</ul>
+<p data-source-map="VGhpcyBpcyBjbG9zZXIgdG8gdHJ1ZSBtb3Rpb24tZnJlcXVlbmN5IG1hcHBpbmcu">This is closer to true motion-frequency mapping.</p>
+<h2 data-source-map="IyMgVGhlIGVhc2llc3QgcHJhY3RpY2FsIG1hcHBpbmcgc3RyYXRlZ2llcwoK">The easiest practical mapping strategies</h2>
+<h3 data-source-map="IyMjIEEuIEJhbmQgYnkgYm9keSByZWdpb24KCg==">A. Band by body region</h3>
+<p data-source-map="VmVyeSBhdXRob3JhYmxlLg==">Very authorable.</p>
+<ul>
+<li data-source-map="KiBoZWFkIC0+IGFtYmllbnQgLyBtaWRzCg==">head -&gt; ambient / mids</li>
+<li data-source-map="KiBsZWZ0IGhhbmQgLT4gbG93cwo=">left hand -&gt; lows</li>
+<li data-source-map="KiByaWdodCBoYW5kIC0+IGhpZ2hzCg==">right hand -&gt; highs</li>
+<li data-source-map="KiBoaXBzIC8gdG9yc28gLT4gbG93LW1pZCBib2R5IHB1bHNlCg==">hips / torso -&gt; low-mid body pulse</li>
+<li data-source-map="KiBmZWV0IC8gc3RlcCBjYWRlbmNlIC0+IGtpY2stbGlrZSBsb3cgcHVsc2U=">feet / step cadence -&gt; kick-like low pulse</li>
+</ul>
+<p data-source-map="VGhpcyBpcyBzaW1wbGUgYW5kIGludHVpdGl2ZS4=">This is simple and intuitive.</p>
+<h3 data-source-map="IyMjIEIuIEJhbmQgYnkgbW90aW9uIHR5cGUKCg==">B. Band by motion type</h3>
+<p data-source-map="TXVjaCBiZXR0ZXIu">Much better.</p>
+<ul>
+<li data-source-map="KiBsYXJnZSBzbG93IG1vdGlvbiAtPiBsb3cgZnJlcXVlbmNpZXMK">large slow motion -&gt; low frequencies</li>
+<li data-source-map="KiBtZWRpdW0gcmh5dGhtaWMgbW90aW9uIC0+IG1pZHMK">medium rhythmic motion -&gt; mids</li>
+<li data-source-map="KiB0aW55IGZhc3QgbW90aW9uIC0+IGhpZ2hz">tiny fast motion -&gt; highs</li>
+</ul>
+<p data-source-map="RXhhbXBsZTo=">Example:</p>
+<ul>
+<li data-source-map="KiBib3RoIGFybXMgc3dlZXBpbmcgd2lkZSA9IGxvdy1lbmQgc3dlbGwK">both arms sweeping wide = low-end swell</li>
+<li data-source-map="KiB0b3JzbyByb2NraW5nID0gbWlkIHRleHR1cmUK">torso rocking = mid texture</li>
+<li data-source-map="KiBmaW5nZXJzIC8gd3Jpc3QgZmx1dHRlciA9IGJyaWdodCBzaGltbWVy">fingers / wrist flutter = bright shimmer</li>
+</ul>
+<p data-source-map="VGhpcyBmZWVscyBuYXR1cmFsIGJlY2F1c2UgaXQgbWlycm9ycyBob3cgcGVvcGxlIGFscmVhZHkgcGVyY2VpdmUgbW92ZW1lbnQgc2NhbGUu">This feels natural because it mirrors how people already perceive movement scale.</p>
+<h3 data-source-map="IyMjIEMuIEJhbmQgYnkgZGVyaXZlZCB0ZW1wb3JhbCBmcmVxdWVuY3kKCg==">C. Band by derived temporal frequency</h3>
+<p data-source-map="TW9zdCAic2NpZW50aWZpYyIu">Most &quot;scientific&quot;.</p>
+<p data-source-map="Rm9yIGVhY2ggdHJhY2tlZCBzaWduYWw6">For each tracked signal:</p>
+<ul>
+<li data-source-map="KiBzYW1wbGUgb3ZlciB0aW1lCg==">sample over time</li>
+<li data-source-map="KiBjb21wdXRlIG9zY2lsbGF0aW9uIHJhdGUK">compute oscillation rate</li>
+<li data-source-map="KiBtYXAgbG93IG9zY2lsbGF0aW9uIHJhdGVzIHRvIGxvdyB2aXN1YWwgYmFuZHMK">map low oscillation rates to low visual bands</li>
+<li data-source-map="KiBtYXAgZmFzdGVyIG9zY2lsbGF0aW9uIHJhdGVzIHRvIGhpZ2hlciBiYW5kcw==">map faster oscillation rates to higher bands</li>
+</ul>
+<p data-source-map="RXhhbXBsZTo=">Example:</p>
+<ul>
+<li data-source-map="KiAwLjUtMS41IEh6IGJvZHkgc3dheSAtPiBsb3cgYmFuZAo=">0.5-1.5 Hz body sway -&gt; low band</li>
+<li data-source-map="KiAyLTQgSHogYXJtIHJoeXRobSAtPiBtaWQgYmFuZAo=">2-4 Hz arm rhythm -&gt; mid band</li>
+<li data-source-map="KiA1LTEwIEh6IGppdHRlci9zaGFrZSAtPiBoaWdoIGJhbmQ=">5-10 Hz jitter/shake -&gt; high band</li>
+</ul>
+<p data-source-map="VGhpcyBpcyBlbGVnYW50LCBidXQgbm9pc2llciBhbmQgdHJpY2tpZXIu">This is elegant, but noisier and trickier.</p>
+<h2 data-source-map="IyMgQmVzdCBhcHByb2FjaCBmb3IgR3Jvb3Z5IExhYnMKCg==">Best approach for Groovy Labs</h2>
+<p data-source-map="SSB3b3VsZCB1c2UgYSAqKmh5YnJpZCoqOg==">I would use a <strong>hybrid</strong>:</p>
+<h3 data-source-map="IyMjIENoYW5uZWwgMTogcGh5c2ljYWwgaW50ZW5zaXR5Cgo=">Channel 1: physical intensity</h3>
+<p data-source-map="RGVyaXZlZCBmcm9tOg==">Derived from:</p>
+<ul>
+<li data-source-map="KiBoYW5kIHZlbG9jaXR5Cg==">hand velocity</li>
+<li data-source-map="KiBjb250cm9sbGVyIGFjY2VsZXJhdGlvbgo=">controller acceleration</li>
+<li data-source-map="KiBoZWFkIGFjY2VsZXJhdGlvbgo=">head acceleration</li>
+<li data-source-map="KiBib2R5IENPTSB2ZWxvY2l0eQ==">body COM velocity</li>
+</ul>
+<p data-source-map="VGhpcyBiZWNvbWVzOg==">This becomes:</p>
+<ul>
+<li data-source-map="KiBgcGxheWVyX2VuZXJneWA="><code>player_energy</code></li>
+</ul>
+<h3 data-source-map="IyMjIENoYW5uZWwgMjogcmh5dGhtaWMgY2FkZW5jZQoK">Channel 2: rhythmic cadence</h3>
+<p data-source-map="RGVyaXZlZCBmcm9tOg==">Derived from:</p>
+<ul>
+<li data-source-map="KiByZXBlYXRlZCBtb3ZlbWVudCB0aW1pbmcK">repeated movement timing</li>
+<li data-source-map="KiBzdHJva2UgaW50ZXJ2YWxzCg==">stroke intervals</li>
+<li data-source-map="KiBzdGVwIHRpbWluZwo=">step timing</li>
+<li data-source-map="KiBnZXN0dXJlIHJlcGV0aXRpb24=">gesture repetition</li>
+</ul>
+<p data-source-map="VGhpcyBiZWNvbWVzOg==">This becomes:</p>
+<ul>
+<li data-source-map="KiBgcGxheWVyX3JoeXRobWA="><code>player_rhythm</code></li>
+</ul>
+<h3 data-source-map="IyMjIENoYW5uZWwgMzogc3BhdGlhbCBleHBhbnNpb24KCg==">Channel 3: spatial expansion</h3>
+<p data-source-map="RGVyaXZlZCBmcm9tOg==">Derived from:</p>
+<ul>
+<li data-source-map="KiBoYW5kIGRpc3RhbmNlCg==">hand distance</li>
+<li data-source-map="KiBhcm0gc3Bhbgo=">arm span</li>
+<li data-source-map="KiBjaGVzdCBvcGVubmVzcwo=">chest openness</li>
+<li data-source-map="KiBib2R5IGV4dGVuc2lvbg==">body extension</li>
+</ul>
+<p data-source-map="VGhpcyBiZWNvbWVzOg==">This becomes:</p>
+<ul>
+<li data-source-map="KiBgcGxheWVyX3NwcmVhZGA="><code>player_spread</code></li>
+</ul>
+<h3 data-source-map="IyMjIENoYW5uZWwgNDogdHdpc3QgLyByb3RhdGlvbgoK">Channel 4: twist / rotation</h3>
+<p data-source-map="RGVyaXZlZCBmcm9tOg==">Derived from:</p>
+<ul>
+<li data-source-map="KiB0b3JzbyB5YXcgZGVsdGEK">torso yaw delta</li>
+<li data-source-map="KiBzaG91bGRlciBkaWZmZXJlbnRpYWwK">shoulder differential</li>
+<li data-source-map="KiBoYW5kIGNpcmN1bGFyaXR5">hand circularity</li>
+</ul>
+<p data-source-map="VGhpcyBiZWNvbWVzOg==">This becomes:</p>
+<ul>
+<li data-source-map="KiBgcGxheWVyX3R3aXN0YA=="><code>player_twist</code></li>
+</ul>
+<h3 data-source-map="IyMjIENoYW5uZWwgNTogdmVydGljYWxpdHkKCg==">Channel 5: verticality</h3>
+<p data-source-map="RGVyaXZlZCBmcm9tOg==">Derived from:</p>
+<ul>
+<li data-source-map="KiBjcm91Y2ggZGVwdGgK">crouch depth</li>
+<li data-source-map="KiBoYW5kIGVsZXZhdGlvbgo=">hand elevation</li>
+<li data-source-map="KiBoZWFkIGhlaWdodCBkZWx0YQ==">head height delta</li>
+</ul>
+<p data-source-map="VGhpcyBiZWNvbWVzOg==">This becomes:</p>
+<ul>
+<li data-source-map="KiBgcGxheWVyX2xpZnRg"><code>player_lift</code></li>
+</ul>
+<h3 data-source-map="IyMjIENoYW5uZWwgNjogbWljcm8tZGV0YWlsCgo=">Channel 6: micro-detail</h3>
+<p data-source-map="RGVyaXZlZCBmcm9tOg==">Derived from:</p>
+<ul>
+<li data-source-map="KiBzbWFsbCBmYXN0IGhhbmQgaml0dGVyCg==">small fast hand jitter</li>
+<li data-source-map="KiBmaW5nZXIgbW90aW9uCg==">finger motion</li>
+<li data-source-map="KiBjb250cm9sbGVyIGd5cm8gYWN0aXZpdHk=">controller gyro activity</li>
+</ul>
+<p data-source-map="VGhpcyBiZWNvbWVzOg==">This becomes:</p>
+<ul>
+<li data-source-map="KiBgcGxheWVyX3NwYXJrYA=="><code>player_spark</code></li>
+</ul>
+<p data-source-map="VGhlbiBtYXAgdGhvc2UgdG8gcHNldWRvLWZyZXF1ZW5jeSBiYW5kczo=">Then map those to pseudo-frequency bands:</p>
+<ul>
+<li data-source-map="KiBgbG93X21vZGAgPSBlbmVyZ3kgKiAwLjUgKyBzcHJlYWQgKiAwLjMgKyBsaWZ0ICogMC4yCg=="><code>low_mod</code> = energy * 0.5 + spread * 0.3 + lift * 0.2</li>
+<li data-source-map="KiBgbWlkX21vZGAgPSByaHl0aG0gKiAwLjUgKyB0d2lzdCAqIDAuMyArIGVuZXJneSAqIDAuMgo="><code>mid_mod</code> = rhythm * 0.5 + twist * 0.3 + energy * 0.2</li>
+<li data-source-map="KiBgaGlnaF9tb2RgID0gc3BhcmsgKiAwLjYgKyByaHl0aG0gKiAwLjI1ICsgbGlmdCAqIDAuMTU="><code>high_mod</code> = spark * 0.6 + rhythm * 0.25 + lift * 0.15</li>
+</ul>
+<p data-source-map="Tm93IHlvdSBoYXZlIGJhbmQtbGlrZSBjb250cm9sIHdpdGhvdXQgcHJldGVuZGluZyB0aGUgYm9keSBpcyBhbiBNUDMu">Now you have band-like control without pretending the body is an MP3.</p>
+<h2 data-source-map="IyMgSWYgeW91IHJlYWxseSB3YW50ICJtb3ZlbWVudCB0byBmcmVxdWVuY2llcyIKCg==">If you really want &quot;movement to frequencies&quot;</h2>
+<p data-source-map="SGVyZSBhcmUgdGhlIGxlZ2l0aW1hdGUgd2F5czo=">Here are the legitimate ways:</p>
+<h3 data-source-map="IyMjIDEuIE9zY2lsbGF0aW9uIHJhdGUgZXN0aW1hdGlvbgoK">1. Oscillation rate estimation</h3>
+<p data-source-map="Rm9yIGEgdHJhY2tlZCBzY2FsYXIgc2lnbmFsIGxpa2UgaGFuZCBZOg==">For a tracked scalar signal like hand Y:</p>
+<ul>
+<li data-source-map="KiBrZWVwIHJlY2VudCB3aW5kb3cK">keep recent window</li>
+<li data-source-map="KiByZW1vdmUgZHJpZnQgLyBEQyBvZmZzZXQK">remove drift / DC offset</li>
+<li data-source-map="KiBzbW9vdGgK">smooth</li>
+<li data-source-map="KiBkZXRlY3QgZG9taW5hbnQgcGVyaW9kaWNpdHkK">detect dominant periodicity</li>
+<li data-source-map="KiBjb252ZXJ0IHJlcGV0aXRpb24gcmF0ZSB0byBhIGJhbmQ=">convert repetition rate to a band</li>
+</ul>
+<p data-source-map="RXhhbXBsZTo=">Example:</p>
+<ul>
+<li data-source-map="KiBoYW5kIGJvYmJpbmcgYXQgfjEgSHogLT4gbG93Cg==">hand bobbing at ~1 Hz -&gt; low</li>
+<li data-source-map="KiB3cmlzdCBmbHV0dGVyIGF0IH42IEh6IC0+IGhpZ2g=">wrist flutter at ~6 Hz -&gt; high</li>
+</ul>
+<h3 data-source-map="IyMjIDIuIE11bHRpLXNjYWxlIGZpbHRlcnMKCg==">2. Multi-scale filters</h3>
+<p data-source-map="SW5zdGVhZCBvZiBGRlQsIHJ1biBzZXZlcmFsIHRlbXBvcmFsIGZpbHRlcnM6">Instead of FFT, run several temporal filters:</p>
+<ul>
+<li data-source-map="KiB2ZXJ5IHNsb3cgYmFuZDogMC4yLTEgSHoK">very slow band: 0.2-1 Hz</li>
+<li data-source-map="KiBzbG93IGJhbmQ6IDEtMiBIego=">slow band: 1-2 Hz</li>
+<li data-source-map="KiBtZWRpdW0gYmFuZDogMi00IEh6Cg==">medium band: 2-4 Hz</li>
+<li data-source-map="KiBmYXN0IGJhbmQ6IDQtOCBIego=">fast band: 4-8 Hz</li>
+<li data-source-map="KiB2ZXJ5IGZhc3QgYmFuZDogOC0xMiBIeg==">very fast band: 8-12 Hz</li>
+</ul>
+<p data-source-map="RmVlZCBtb3ZlbWVudCBzaWduYWwgaW50byBhbGwgb2YgdGhlbS4KV2hpY2hldmVyIHJlc3BvbmRzIG1vc3Qgc3Ryb25nbHkgdGVsbHMgeW91IHdoZXJlIHRoZSBtb3Rpb24gImxpdmVzIi4=">Feed movement signal into all of them.
+Whichever responds most strongly tells you where the motion &quot;lives&quot;.</p>
+<p data-source-map="VGhhdCBpcyBvZnRlbiBtb3JlIHJvYnVzdCB0aGFuIEZGVCBpbiBnYW1lcGxheS4=">That is often more robust than FFT in gameplay.</p>
+<h3 data-source-map="IyMjIDMuIEdlc3R1cmUgY2xhc3NpZmllciAtPiBzeW50aGV0aWMgYmFuZCB0cmlnZ2VyCgo=">3. Gesture classifier -&gt; synthetic band trigger</h3>
+<p data-source-map="UmVjb2duaXplIGdlc3R1cmVzIGFuZCBhc3NpZ24gYmFuZCByZXNwb25zZXMu">Recognize gestures and assign band responses.</p>
+<ul>
+<li data-source-map="KiBwdW5jaCAtPiBsb3cgdHJhbnNpZW50Cg==">punch -&gt; low transient</li>
+<li data-source-map="KiBzd2VlcCAtPiBtaWQgd2hvb3NoCg==">sweep -&gt; mid whoosh</li>
+<li data-source-map="KiBmbHV0dGVyIC0+IGhpZ2ggc3BhcmtsZQo=">flutter -&gt; high sparkle</li>
+<li data-source-map="KiBqdW1wIC8gYm9keSByaXNlIC0+IGxvdyBibG9vbSBwdWxzZQo=">jump / body rise -&gt; low bloom pulse</li>
+<li data-source-map="KiBzcGluIC0+IHdpZGUtc3BlY3RydW0gYnVyc3Q=">spin -&gt; wide-spectrum burst</li>
+</ul>
+<p data-source-map="VGhpcyBpcyBub3QgYW5hbHlzaXMsIGJ1dCBpdCBpcyBleHByZXNzaXZlIGFuZCBzdGFibGUu">This is not analysis, but it is expressive and stable.</p>
+<h2 data-source-map="IyMgV2hhdCBzaWduYWxzIHRvIHNhbXBsZT8KCg==">What signals to sample?</h2>
+<p data-source-map="Tm90IHJhdyB0cmFuc2Zvcm1zIG9ubHkuIFVzZSBkZXJpdmVkIHZhbHVlcy4=">Not raw transforms only. Use derived values.</p>
+<p data-source-map="R29vZCBpbnB1dHM6">Good inputs:</p>
+<ul>
+<li data-source-map="KiBwb3NpdGlvbiBkZWx0YQo=">position delta</li>
+<li data-source-map="KiB2ZWxvY2l0eSBtYWduaXR1ZGUK">velocity magnitude</li>
+<li data-source-map="KiBhY2NlbGVyYXRpb24gbWFnbml0dWRlCg==">acceleration magnitude</li>
+<li data-source-map="KiBhbmd1bGFyIHZlbG9jaXR5Cg==">angular velocity</li>
+<li data-source-map="KiBqZXJrCg==">jerk</li>
+<li data-source-map="KiBjdXJ2YXR1cmUgb2YgdHJhamVjdG9yeQo=">curvature of trajectory</li>
+<li data-source-map="KiBzeW1tZXRyeSBiZXR3ZWVuIGxlZnQvcmlnaHQgaGFuZHMK">symmetry between left/right hands</li>
+<li data-source-map="KiBkaXN0YW5jZSBiZXR3ZWVuIGpvaW50cwo=">distance between joints</li>
+<li data-source-map="KiBwb3NlIG9wZW5uZXNzCg==">pose openness</li>
+<li data-source-map="KiBwZXJpb2RpY2l0eSBzY29yZQo=">periodicity score</li>
+<li data-source-map="KiBzdGlsbG5lc3Mgc2NvcmU=">stillness score</li>
+</ul>
+<p data-source-map="RXhhbXBsZToKQSBoYW5kIHBvc2l0aW9uIGFsb25lIHRlbGxzIGxpdHRsZS4KQSBoYW5kIHZlbG9jaXR5IGN1cnZlIG92ZXIgdGltZSB0ZWxscyBhIHN0b3J5Lg==">Example:
+A hand position alone tells little.
+A hand velocity curve over time tells a story.</p>
+<h2 data-source-map="IyMgQSBwcmFjdGljYWwgbWFwcGluZyBleGFtcGxlCgo=">A practical mapping example</h2>
+<p data-source-map="U2F5IHRoZSB1c2VyIGlzIGRhbmNpbmcgaW4gYSBHcm9vdnkgTGFicyBlbnZpcm9ubWVudC4=">Say the user is dancing in a Groovy Labs environment.</p>
+<p data-source-map="SW5wdXRzOg==">Inputs:</p>
+<ul>
+<li data-source-map="KiBsZWZ0IGhhbmQgc3BlZWQgPSAwLjgK">left hand speed = 0.8</li>
+<li data-source-map="KiByaWdodCBoYW5kIHNwZWVkID0gMS4xCg==">right hand speed = 1.1</li>
+<li data-source-map="KiB0b3JzbyB0d2lzdCA9IDAuNgo=">torso twist = 0.6</li>
+<li data-source-map="KiBoYW5kIGRpc3RhbmNlID0gMC45Cg==">hand distance = 0.9</li>
+<li data-source-map="KiBoZWFkIGJvYiBjYWRlbmNlID0gMi4xIEh6Cg==">head bob cadence = 2.1 Hz</li>
+<li data-source-map="KiBtaWNyby1qaXR0ZXIgPSAwLjI=">micro-jitter = 0.2</li>
+</ul>
+<p data-source-map="RGVyaXZlZDo=">Derived:</p>
+<ul>
+<li data-source-map="KiBlbmVyZ3kgPSAwLjg1Cg==">energy = 0.85</li>
+<li data-source-map="KiBzcHJlYWQgPSAwLjkK">spread = 0.9</li>
+<li data-source-map="KiByaHl0aG0gPSAwLjcK">rhythm = 0.7</li>
+<li data-source-map="KiB0d2lzdCA9IDAuNgo=">twist = 0.6</li>
+<li data-source-map="KiBzcGFyayA9IDAuMg==">spark = 0.2</li>
+</ul>
+<p data-source-map="TWFwcGVkOg==">Mapped:</p>
+<ul>
+<li data-source-map="KiBsb3dfbW9kID0gc3Ryb25nCg==">low_mod = strong</li>
+<li data-source-map="KiBtaWRfbW9kID0gbWVkaXVtLXN0cm9uZwo=">mid_mod = medium-strong</li>
+<li data-source-map="KiBoaWdoX21vZCA9IHdlYWs=">high_mod = weak</li>
+</ul>
+<p data-source-map="VmlzdWFsIHJlc3VsdDo=">Visual result:</p>
+<ul>
+<li data-source-map="KiBlbnZpcm9ubWVudCBwdWxzZXMgZGVlcCBhbmQgd2lkZQo=">environment pulses deep and wide</li>
+<li data-source-map="KiB0dW5uZWwgZXhwYW5kcyB3aXRoIGFybSBzcHJlYWQK">tunnel expands with arm spread</li>
+<li data-source-map="KiBnZW9tZXRyeSBzd2lybHMgd2l0aCB0b3JzbyB0d2lzdAo=">geometry swirls with torso twist</li>
+<li data-source-map="KiBsZXNzIGdsaXR0ZXIgYmVjYXVzZSBtaWNyby1qaXR0ZXIgaXMgbG93">less glitter because micro-jitter is low</li>
+</ul>
+<p data-source-map="VGhhdCB3aWxsIGZlZWwgbXVjaCBiZXR0ZXIgdGhhbiAibGVmdCBoYW5kIHgtcG9zaXRpb24gPSAyMjAgSHoiLg==">That will feel much better than &quot;left hand x-position = 220 Hz&quot;.</p>
+<h2 data-source-map="IyMgVGhlIHJlYWwgZGVzaWduIHF1ZXN0aW9uCgo=">The real design question</h2>
+<p data-source-map="QXNrIHRoaXM6">Ask this:</p>
+<p data-source-map="KipEbyB5b3Ugd2FudCB0aGUgYm9keSB0byBpbmZsdWVuY2UgdmlzdWFscyBjb250aW51b3VzbHksIG9yIHBlcmZvcm0gdGhlbT8qKg=="><strong>Do you want the body to influence visuals continuously, or perform them?</strong></p>
+<p data-source-map="VGhvc2UgYXJlIGRpZmZlcmVudCBtb2Rlcy4=">Those are different modes.</p>
+<h3 data-source-map="IyMjIE1vZGUgQTogZXhwcmVzc2l2ZSBtb2R1bGF0aW9uCgo=">Mode A: expressive modulation</h3>
+<p data-source-map="TW92ZW1lbnQgY29udGludW91c2x5IHNoYXBlcyB2aXN1YWxzLgpWZXJ5IGZsdWlkLCBhbWJpZW50LCBkYW5jZS1mcmllbmRseS4=">Movement continuously shapes visuals.
+Very fluid, ambient, dance-friendly.</p>
+<h3 data-source-map="IyMjIE1vZGUgQjogZ2VzdHVyZSB0cmlnZ2VycwoK">Mode B: gesture triggers</h3>
+<p data-source-map="U3BlY2lmaWMgbW90aW9ucyBwcm9kdWNlIGRpc3RpbmN0IHZpc3VhbCBldmVudHMuCk1vcmUgZ2FtZXksIG1vcmUgcmVhZGFibGUu">Specific motions produce distinct visual events.
+More gamey, more readable.</p>
+<h3 data-source-map="IyMjIE1vZGUgQzogY29uZHVjdG9yIG1vZGUKCg==">Mode C: conductor mode</h3>
+<p data-source-map="TW92ZW1lbnQgcmVzaGFwZXMgaG93IHRoZSBzb25nJ3Mgb3duIHJlYWN0aXZlIHN5c3RlbSBiZWhhdmVzLgpUaGlzIGlzIHRoZSBtb3N0IGludGVyZXN0aW5nIG9uZS4=">Movement reshapes how the song&#39;s own reactive system behaves.
+This is the most interesting one.</p>
+<p data-source-map="Rm9yIGV4YW1wbGU6">For example:</p>
+<ul>
+<li data-source-map="KiBtdXNpYyBwcm92aWRlcyBiYXNlIGJhbmQgZGF0YQo=">music provides base band data</li>
+<li data-source-map="KiBwbGF5ZXIgbW90aW9uIG11bHRpcGxpZXMgb3IgcmVtaXhlcyB0aG9zZSBiYW5kcwo=">player motion multiplies or remixes those bands</li>
+<li data-source-map="KiBwbGF5ZXIgaXMgbm90IHJlcGxhY2luZyB0aGUgc29uZywgYnV0IHNjdWxwdGluZyBpdA==">player is not replacing the song, but sculpting it</li>
+</ul>
+<p data-source-map="VGhhdCBpcyBwcm9iYWJseSB0aGUgc3dlZXRlc3Qgc3BvdCBmb3IgR3Jvb3Z5IExhYnMu">That is probably the sweetest spot for Groovy Labs.</p>
+<h2 data-source-map="IyMgVGhlIHN0cm9uZ2VzdCBHcm9vdnkgTGFicyB2ZXJzaW9uCgo=">The strongest Groovy Labs version</h2>
+<p data-source-map="RG8gdGhpczo=">Do this:</p>
+<p data-source-map="KipmaW5hbF92aXN1YWxfYmFuZCA9IGF1ZGlvX2JhbmQgKiBhdWRpb193ZWlnaHQgKyBib2R5X2JhbmQgKiBib2R5X3dlaWdodCArIGdhbWVwbGF5X2JhbmQgKiBnYW1lcGxheV93ZWlnaHQqKg=="><strong>final_visual_band = audio_band * audio_weight + body_band * body_weight + gameplay_band * gameplay_weight</strong></p>
+<p data-source-map="U286">So:</p>
+<ul>
+<li data-source-map="KiB0aGUgc29uZyBrZWVwcyBpZGVudGl0eQo=">the song keeps identity</li>
+<li data-source-map="KiB0aGUgcGxheWVyIGFkZHMgZXhwcmVzc2lvbgo=">the player adds expression</li>
+<li data-source-map="KiBnYW1lcGxheSBhZGRzIGRyYW1hdGljIGJlYXRz">gameplay adds dramatic beats</li>
+</ul>
+<p data-source-map="VGhhdCBnaXZlcyB5b3U6">That gives you:</p>
+<ul>
+<li data-source-map="KiByZWFjdGl2ZSB3b3JsZHMK">reactive worlds</li>
+<li data-source-map="KiBkYW5jZS1kcml2ZW4gc3RhZ2UgY29udHJvbAo=">dance-driven stage control</li>
+<li data-source-map="KiBzb2NpYWwgcGVyZm9ybWFuY2UgcG90ZW50aWFsCg==">social performance potential</li>
+<li data-source-map="KiB1c2VyLWdlbmVyYXRlZCAibW92ZW1lbnQgdmlzdWFsaXplcnMi">user-generated &quot;movement visualizers&quot;</li>
+</ul>
+<h2 data-source-map="IyMgQXJjaGl0ZWN0dXJlIEkgd291bGQgcmVjb21tZW5kCgo=">Architecture I would recommend</h2>
+<h3 data-source-map="IyMjIElucHV0IGxheWVyCgo=">Input layer</h3>
+<p data-source-map="Q29sbGVjdDo=">Collect:</p>
+<ul>
+<li data-source-map="KiBITUQK">HMD</li>
+<li data-source-map="KiBjb250cm9sbGVycwo=">controllers</li>
+<li data-source-map="KiBoYW5kcwo=">hands</li>
+<li data-source-map="KiBmdWxsLWJvZHkgZXN0aW1hdGU=">full-body estimate</li>
+</ul>
+<h3 data-source-map="IyMjIEZlYXR1cmUgZXh0cmFjdGlvbiBsYXllcgoK">Feature extraction layer</h3>
+<p data-source-map="Q29tcHV0ZTo=">Compute:</p>
+<ul>
+<li data-source-map="KiBzcGVlZHMK">speeds</li>
+<li data-source-map="KiBhY2NlbGVyYXRpb25zCg==">accelerations</li>
+<li data-source-map="KiBvcGVubmVzcwo=">openness</li>
+<li data-source-map="KiBzeW1tZXRyeQo=">symmetry</li>
+<li data-source-map="KiBjYWRlbmNlCg==">cadence</li>
+<li data-source-map="KiBvc2NpbGxhdGlvbiByYXRlCg==">oscillation rate</li>
+<li data-source-map="KiBnZXN0dXJlIGNvbmZpZGVuY2U=">gesture confidence</li>
+</ul>
+<h3 data-source-map="IyMjIEV4cHJlc3Npb24gbGF5ZXIKCg==">Expression layer</h3>
+<p data-source-map="UHJvZHVjZSBub3JtYWxpemVkIGNoYW5uZWxzOg==">Produce normalized channels:</p>
+<ul>
+<li data-source-map="KiBgZW5lcmd5YAo="><code>energy</code></li>
+<li data-source-map="KiBgcmh5dGhtYAo="><code>rhythm</code></li>
+<li data-source-map="KiBgc3ByZWFkYAo="><code>spread</code></li>
+<li data-source-map="KiBgdHdpc3RgCg=="><code>twist</code></li>
+<li data-source-map="KiBgbGlmdGAK"><code>lift</code></li>
+<li data-source-map="KiBgc3BhcmtgCg=="><code>spark</code></li>
+<li data-source-map="KiBgc3RpbGxuZXNzYA=="><code>stillness</code></li>
+</ul>
+<h3 data-source-map="IyMjIEJpbmRpbmcgbGF5ZXIKCg==">Binding layer</h3>
+<p data-source-map="TWFwIGV4cHJlc3Npb24gY2hhbm5lbHMgdG86">Map expression channels to:</p>
+<ul>
+<li data-source-map="KiBwc2V1ZG8gZnJlcXVlbmN5IGJhbmRzCg==">pseudo frequency bands</li>
+<li data-source-map="KiBzaGFkZXIgZmxvYXRzCg==">shader floats</li>
+<li data-source-map="KiBWRlggcGFyYW1zCg==">VFX params</li>
+<li data-source-map="KiBwb3N0LXByb2Nlc3MgcGFyYW1zCg==">post-process params</li>
+<li data-source-map="KiBldmVudCB0cmlnZ2Vycw==">event triggers</li>
+</ul>
+<h3 data-source-map="IyMjIE1peGVyIGxheWVyCgo=">Mixer layer</h3>
+<p data-source-map="Q29tYmluZTo=">Combine:</p>
+<ul>
+<li data-source-map="KiBtdXNpYyBhbmFseXNpcwo=">music analysis</li>
+<li data-source-map="KiBib2R5IGV4cHJlc3Npb24K">body expression</li>
+<li data-source-map="KiBnYW1lcGxheSBldmVudHM=">gameplay events</li>
+</ul>
+<h3 data-source-map="IyMjIFByZXNlbnRhdGlvbiBsYXllcgoK">Presentation layer</h3>
+<p data-source-map="RmVlZDo=">Feed:</p>
+<ul>
+<li data-source-map="KiBBdWRpb0xpbmsgLyBXYXZlQmluZGVyIHN0eWxlIHBhcmFtcwo=">AudioLink / WaveBinder style params</li>
+<li data-source-map="KiBtYXRlcmlhbCBwcm9wZXJ0eSBibG9ja3MK">material property blocks</li>
+<li data-source-map="KiBnbG9iYWwgc2hhZGVyIHBhcmFtcwo=">global shader params</li>
+<li data-source-map="KiBWRlggR3JhcGg=">VFX Graph</li>
+</ul>
+<h2 data-source-map="IyMgTXkgY29uY3JldGUgcmVjb21tZW5kYXRpb24KCg==">My concrete recommendation</h2>
+<p data-source-map="Rm9yIHYxLCBkbyAqKm5vdCoqIHN0YXJ0IHdpdGggdHJ1ZSBtb3ZlbWVudCBGRlQu">For v1, do <strong>not</strong> start with true movement FFT.</p>
+<p data-source-map="U3RhcnQgd2l0aDo=">Start with:</p>
+<ul>
+<li data-source-map="KiB2ZWxvY2l0eSBtYWduaXR1ZGUK">velocity magnitude</li>
+<li data-source-map="KiBhbmd1bGFyIHZlbG9jaXR5Cg==">angular velocity</li>
+<li data-source-map="KiBoYW5kIGRpc3RhbmNlCg==">hand distance</li>
+<li data-source-map="KiBjcm91Y2ggLyBoZWlnaHQK">crouch / height</li>
+<li data-source-map="KiByaHl0aG0gZnJvbSBwZWFrIGludGVydmFscwo=">rhythm from peak intervals</li>
+<li data-source-map="KiBvcHRpb25hbCBnZXN0dXJlIHRhZ3M=">optional gesture tags</li>
+</ul>
+<p data-source-map="VGhlbiBleHBvc2U6">Then expose:</p>
+<ul>
+<li data-source-map="KiBsb3cgLyBtaWQgLyBoaWdoIGJvZHkgbW9kdWxhdGlvbgo=">low / mid / high body modulation</li>
+<li data-source-map="KiBwdWxzZQo=">pulse</li>
+<li data-source-map="KiBzcHJlYWQK">spread</li>
+<li data-source-map="KiB0d2lzdAo=">twist</li>
+<li data-source-map="KiBzcGFya2xl">sparkle</li>
+</ul>
+<p data-source-map="VGhpcyBnaXZlcyB5b3UgODAlIG9mIHRoZSBtYWdpYyB3aXRoIDIwJSBvZiB0aGUgcGFpbi4=">This gives you 80% of the magic with 20% of the pain.</p>
+<p data-source-map="VGhlbiBsYXRlciwgZm9yIHYyLCBhZGQ6">Then later, for v2, add:</p>
+<ul>
+<li data-source-map="KiBwZXJpb2RpY2l0eSBlc3RpbWF0aW9uCg==">periodicity estimation</li>
+<li data-source-map="KiBtb3Rpb24gYmFuZC1wYXNzIGZpbHRlcnMK">motion band-pass filters</li>
+<li data-source-map="KiBnZXN0dXJlIGNsYXNzaWZpZXIK">gesture classifier</li>
+<li data-source-map="KiBwZXItc29uZyBtYXBwaW5nIHByZXNldHM=">per-song mapping presets</li>
+</ul>
+<h2 data-source-map="IyMgVGlueSBydWxlLW9mLXRodW1iIG1hcHBpbmcgc2V0Cgo=">Tiny rule-of-thumb mapping set</h2>
+<p data-source-map="QSB2ZXJ5IHNvbGlkIGZpcnN0IHBhc3M6">A very solid first pass:</p>
+<ul>
+<li data-source-map="KiAqKmxvdyBiYW5kKioKCiAgKiBib2R5IHN3YXkKICAqIGNyb3VjaC1yaXNlCiAgKiB3aWRlIGFybSBtb3Rpb24KICAqIHN0ZXAgaW1wYWN0Cgo="><p><strong>low band</strong></p>
+<ul>
+<li>body sway</li>
+<li>crouch-rise</li>
+<li>wide arm motion</li>
+<li>step impact</li>
+</ul>
+</li>
+<li data-source-map="KiAqKm1pZCBiYW5kKioKCiAgKiBhcm0gc3dpbmdzCiAgKiB0b3JzbyByb3RhdGlvbgogICogaGFuZCB0cmF2ZWwgYXJjcwoK"><p><strong>mid band</strong></p>
+<ul>
+<li>arm swings</li>
+<li>torso rotation</li>
+<li>hand travel arcs</li>
+</ul>
+</li>
+<li data-source-map="KiAqKmhpZ2ggYmFuZCoqCgogICogd3Jpc3QgZmxpY2tzCiAgKiBmaW5nZXIgbW90aW9uCiAgKiByYXBpZCBjb250cm9sbGVyIGFuZ3VsYXIgY2hhbmdlcwoK"><p><strong>high band</strong></p>
+<ul>
+<li>wrist flicks</li>
+<li>finger motion</li>
+<li>rapid controller angular changes</li>
+</ul>
+</li>
+<li data-source-map="KiAqKnB1bHNlKioKCiAgKiBtb3Rpb24gb25zZXRzIC8gcGVha3MgaW4gYWNjZWxlcmF0aW9uCgo="><p><strong>pulse</strong></p>
+<ul>
+<li>motion onsets / peaks in acceleration</li>
+</ul>
+</li>
+<li data-source-map="KiAqKmFtYmllbnQqKgoKICAqIGhlYWQgbW90aW9uIGFuZCBzdGlsbG5lc3MgYmFsYW5jZQ=="><p><strong>ambient</strong></p>
+<ul>
+<li>head motion and stillness balance</li>
+</ul>
+</li>
+</ul>
+<p data-source-map="U3RpbGxuZXNzIGlzIGludGVyZXN0aW5nIHRvby4KV2hlbiB0aGUgcGxheWVyIGZyZWV6ZXMsIHZpc3VhbHMgY2FuICJmb2N1cyIgb3IgY3J5c3RhbGxpemUuIFNpbGVuY2UgaW4gbW92ZW1lbnQgY2FuIGJlIGFzIGV4cHJlc3NpdmUgYXMgbW90aW9uLg==">Stillness is interesting too.
+When the player freezes, visuals can &quot;focus&quot; or crystallize. Silence in movement can be as expressive as motion.</p>
+<h2 data-source-map="IyMgU2hvcnQgYW5zd2VyIHRvIHRoZSAiaG93IHRvIG1hcCB0byBmcmVxdWVuY2llcz8iIHBhcnQKCg==">Short answer to the &quot;how to map to frequencies?&quot; part</h2>
+<p data-source-map="VGhyZWUgZ29vZCBhbnN3ZXJzOg==">Three good answers:</p>
+<ol>
+<li data-source-map="MS4gKipmYWtlIGl0IHNlbWFudGljYWxseSoqCiAgIE1hcCBraW5kcyBvZiBtb3Rpb24gdG8gbG93L21pZC9oaWdoIGJhbmRzLgoK"><p><strong>fake it semantically</strong>
+Map kinds of motion to low/mid/high bands.</p>
+</li>
+<li data-source-map="Mi4gKipkZXJpdmUgdGVtcG9yYWwgZnJlcXVlbmN5KioKICAgQW5hbHl6ZSBob3cgcXVpY2tseSBtb3Rpb24gb3NjaWxsYXRlcyBvdmVyIHRpbWUuCgo="><p><strong>derive temporal frequency</strong>
+Analyze how quickly motion oscillates over time.</p>
+</li>
+<li data-source-map="My4gKip1c2UgYm9keSBleHByZXNzaW9uIGNoYW5uZWxzIGZpcnN0KioKICAgVGhlbiByZW1hcCB0aGVtIGludG8gd2hhdGV2ZXIgV2F2ZUJpbmRlci9BdWRpb0xpbmsgZXhwZWN0cy4="><p><strong>use body expression channels first</strong>
+Then remap them into whatever WaveBinder/AudioLink expects.</p>
+</li>
+</ol>
+<p data-source-map="TnVtYmVyIDMgaXMgdGhlIGJlc3QgcHJvZHVjdCBkZWNpc2lvbi4=">Number 3 is the best product decision.</p>
+<p data-source-map="SWYgeW91IHdhbnQsIEkgY2FuIHNrZXRjaCBhIHZlcnkgY29uY3JldGUgVW5pdHktc2lkZSBkZXNpZ24gZm9yIHRoaXMgbmV4dDoKYE1vdmVtZW50UmVhY3RpdmVTeXN0ZW0gLT4gRmVhdHVyZUV4dHJhY3RvcnMgLT4gRXhwcmVzc2lvbkNoYW5uZWxzIC0+IEJhbmRNaXhlciAtPiBTaGFkZXIvVkZYIG91dHB1dHNgCg==">If you want, I can sketch a very concrete Unity-side design for this next:
+<code>MovementReactiveSystem -&gt; FeatureExtractors -&gt; ExpressionChannels -&gt; BandMixer -&gt; Shader/VFX outputs</code></p>
+<script src='bundled/smartquotes.js'></script><script>smartquotes();</script>
+  </div>
+</body>
+
+</html>
