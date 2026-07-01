@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0060)http://localhost:55068/02d90af1-6815-41b7-8dd7-a29d4ca12169/ -->
-<html data-arp=""><input type="hidden" id="__yoroi_connector_api_injected_type" value="prod"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html data-arp=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!--<base href="http://localhost:55068/02d90af1-6815-41b7-8dd7-a29d4ca12169/">--><base href=".">
   <title>Groovy Labs Audio-Visual Ideas.md</title>
   
@@ -65,58 +65,10 @@
         setTimeout(window.print, 500);
       }
     }
-    function listenForUpdates() {
-      const ws = new WebSocket(`ws://localhost:${window.location.port}`);
-      ws.onopen = function () {
-        const sessionId = window.location.pathname.split("/")[1];
-        ws.send(JSON.stringify({ sessionId: sessionId }));
-      };
-      ws.onmessage = function (event) {
-        const message = JSON.parse(event.data);
-        if (message.type === 'refreshPreview') {
-          const scrollOffset = window.scrollY;
-          ws.send(JSON.stringify({ type: 'scrollOffset', value: scrollOffset }));
-          location.reload();
-        } else if (message.type === 'restoreScroll') {
-          const setScrollPosition = () => {
-            window.scrollTo(0, message.scrollOffset);
-          };
-          if (document.readyState === 'complete') {
-            setScrollPosition();
-          } else {
-            window.addEventListener('load', setScrollPosition);
-            const images = document.querySelectorAll('img');
-            let loadedImages = 0;
-            images.forEach(img => {
-              if (img.complete) {
-                loadedImages++;
-              } else {
-                img.addEventListener('load', () => {
-                  loadedImages++;
-                  if (loadedImages === images.length) {
-                    setScrollPosition();
-                  }
-                });
-              }
-            });
-          }
-        }
-      };
-
-      document.querySelectorAll('[data-source-map]')
-        .forEach(element => {
-          element.addEventListener('click', () => document.querySelector('.xref-highlight')?.classList.remove('xref-highlight'));
-          element.addEventListener('dblclick', () => {
-            const text = element.getAttribute('data-source-map');
-            ws.send(JSON.stringify({ type: 'findInEditor', value: text }));
-            element.classList.add('xref-highlight');
-          });
-        });
-    };
   </script>
 </head>
 
-<body onload="listenForUpdates();printAndClose(false);">
+<body onload="printAndClose(false);">
   <h3 class="filepath">Groovy Labs Audio-Visual Ideas.md</h3>
   <div>
     <h1 data-source-map="IyBRdWVzdGlvbgoK">Question</h1>
